@@ -1,0 +1,3553 @@
+<!doctype html>
+<html lang="sw" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>
+      TRACDI Muslim Students Association — Jumuiya ya Wanafunzi Waislamu, Dodoma
+    </title>
+    <meta
+      name="description"
+      content="TRACDI MSA: jukwaa la wanafunzi Waislamu wa Tanzania Research and Career Development Institute (TRACDI), Dodoma, Tanzania."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Lora:wght@500;600;700&family=Nunito:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* ===================== MUUNDO / DESIGN TOKENS ===================== */
+      :root {
+        --green-900: #06382a;
+        --green-800: #0a4a37;
+        --green-700: #0d6247;
+        --green-600: #117a58;
+        --green-100: #dff0e8;
+        --gold: #b8892b;
+        --gold-light: #d9b25a;
+        --gold-pale: #f3e6c4;
+        --cream: #fbf6e9;
+        --cream-2: #f4ecd6;
+        --white: #ffffff;
+        --ink: #1b2a24;
+        --ink-soft: #4a5a52;
+        --line: #e2d8b9;
+        --danger: #9b2c2c;
+        --ok: #0d6247;
+        --radius: 16px;
+        --shadow: 0 6px 22px rgba(6, 56, 42, 0.1);
+        --shadow-lg: 0 14px 36px rgba(6, 56, 42, 0.18);
+        --font-body:
+          "Nunito", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+        --font-head: "Lora", Georgia, "Times New Roman", serif;
+        --font-ar: "Amiri", "Noto Naskh Arabic", "Traditional Arabic", serif;
+        --star: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64'%3E%3Cg fill='none' stroke='%23d9b25a' stroke-opacity='.28' stroke-width='1.2'%3E%3Crect x='16' y='16' width='32' height='32'/%3E%3Crect x='16' y='16' width='32' height='32' transform='rotate(45 32 32)'/%3E%3Ccircle cx='32' cy='32' r='22'/%3E%3C/g%3E%3C/svg%3E");
+      }
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 84px;
+        -webkit-text-size-adjust: 100%;
+      }
+      body {
+        margin: 0;
+        font-family: var(--font-body);
+        color: var(--ink);
+        background: var(--cream);
+        line-height: 1.65;
+        font-size: 1rem;
+        overflow-x: hidden;
+      }
+      img {
+        max-width: 100%;
+        display: block;
+      }
+      a {
+        color: var(--green-700);
+      }
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-family: var(--font-head);
+        color: var(--green-900);
+        line-height: 1.25;
+        margin: 0 0 0.5em;
+      }
+      h1 {
+        font-size: clamp(2rem, 6vw, 3.4rem);
+      }
+      h2 {
+        font-size: clamp(1.55rem, 4vw, 2.1rem);
+      }
+      h3 {
+        font-size: 1.2rem;
+      }
+      p {
+        margin: 0 0 1em;
+      }
+      .ar {
+        font-family: var(--font-ar);
+        direction: rtl;
+        text-align: right;
+        unicode-bidi: isolate;
+      }
+      .container {
+        width: min(1180px, 100% - 2rem);
+        margin-inline: auto;
+      }
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        white-space: nowrap;
+      }
+      :focus-visible {
+        outline: 3px solid var(--gold);
+        outline-offset: 2px;
+        border-radius: 6px;
+      }
+      .skip {
+        position: absolute;
+        left: -999px;
+        top: 8px;
+        background: var(--gold);
+        color: #000;
+        padding: 0.6rem 1rem;
+        z-index: 300;
+        border-radius: 8px;
+      }
+      .skip:focus {
+        left: 8px;
+      }
+
+      /* ===================== BUTTONS & FORM ===================== */
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        font: inherit;
+        font-weight: 700;
+        padding: 0.75rem 1.3rem;
+        border-radius: 999px;
+        border: 2px solid transparent;
+        cursor: pointer;
+        text-decoration: none;
+        transition:
+          transform 0.2s,
+          box-shadow 0.2s,
+          background 0.2s;
+        min-height: 44px;
+      }
+      .btn:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--shadow);
+      }
+      .btn-gold {
+        background: var(--gold);
+        color: #1a1200;
+      }
+      .btn-gold:hover {
+        background: var(--gold-light);
+      }
+      .btn-green {
+        background: var(--green-700);
+        color: #fff;
+      }
+      .btn-green:hover {
+        background: var(--green-800);
+      }
+      .btn-ghost {
+        background: transparent;
+        border-color: var(--gold-light);
+        color: #fff;
+      }
+      .btn-outline {
+        background: #fff;
+        border-color: var(--green-700);
+        color: var(--green-800);
+      }
+      .btn-sm {
+        padding: 0.4rem 0.85rem;
+        font-size: 0.88rem;
+        min-height: 38px;
+      }
+      .btn[disabled] {
+        opacity: 0.6;
+        cursor: not-allowed;
+        transform: none;
+      }
+      .field {
+        display: flex;
+        flex-direction: column;
+        gap: 0.35rem;
+        margin-bottom: 1rem;
+      }
+      label {
+        font-weight: 700;
+        font-size: 0.95rem;
+      }
+      input,
+      select,
+      textarea {
+        font: inherit;
+        color: var(--ink);
+        background: #fff;
+        border: 2px solid var(--line);
+        border-radius: 12px;
+        padding: 0.7rem 0.9rem;
+        width: 100%;
+        min-height: 44px;
+      }
+      input:focus,
+      select:focus,
+      textarea:focus {
+        border-color: var(--green-600);
+        outline: 3px solid rgba(184, 137, 43, 0.4);
+      }
+      textarea {
+        min-height: 130px;
+        resize: vertical;
+      }
+      .hint {
+        font-size: 0.85rem;
+        color: var(--ink-soft);
+      }
+      .error-text {
+        color: var(--danger);
+        font-size: 0.88rem;
+        font-weight: 600;
+        min-height: 1.1em;
+      }
+      .searchbox {
+        position: relative;
+        max-width: 520px;
+        flex: 1 1 260px;
+      }
+      .searchbox input {
+        padding-right: 2.8rem;
+      }
+      .searchbox button {
+        position: absolute;
+        right: 4px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 38px;
+        height: 38px;
+        border: 0;
+        background: transparent;
+        font-size: 1.3rem;
+        cursor: pointer;
+        color: var(--ink-soft);
+        border-radius: 50%;
+      }
+      .searchbox button[hidden] {
+        display: none;
+      }
+
+      /* ===================== HEADER ===================== */
+      header.site {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        background: linear-gradient(180deg, var(--green-900), var(--green-800));
+        border-bottom: 3px solid var(--gold);
+        box-shadow: 0 4px 18px rgba(0, 0, 0, 0.25);
+      }
+      .bar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.75rem;
+        min-height: 68px;
+      }
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        text-decoration: none;
+        color: #fff;
+      }
+      .logo svg {
+        width: 34px;
+        height: 34px;
+        flex: none;
+      }
+      .logo b {
+        font-family: var(--font-head);
+        font-size: 1.3rem;
+        letter-spacing: 0.04em;
+        color: var(--gold-light);
+      }
+      .logo small {
+        display: block;
+        font-size: 0.66rem;
+        color: #cfe3d8;
+        letter-spacing: 0.02em;
+        margin-top: -4px;
+      }
+      .menu-toggle {
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 5px;
+        width: 46px;
+        height: 46px;
+        border: 2px solid var(--gold-light);
+        background: transparent;
+        border-radius: 12px;
+        cursor: pointer;
+        padding: 0 11px;
+      }
+      .menu-toggle span {
+        display: block;
+        height: 2.5px;
+        background: var(--gold-light);
+        border-radius: 2px;
+        transition:
+          transform 0.25s,
+          opacity 0.2s;
+      }
+      .menu-toggle[aria-expanded="true"] span:nth-child(1) {
+        transform: translateY(7.5px) rotate(45deg);
+      }
+      .menu-toggle[aria-expanded="true"] span:nth-child(2) {
+        opacity: 0;
+      }
+      .menu-toggle[aria-expanded="true"] span:nth-child(3) {
+        transform: translateY(-7.5px) rotate(-45deg);
+      }
+      nav.main {
+        display: none;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 100%;
+        background: var(--green-900);
+        border-bottom: 3px solid var(--gold);
+        max-height: calc(100vh - 72px);
+        overflow-y: auto;
+        padding: 0.5rem 1rem 1rem;
+      }
+      nav.main.open {
+        display: block;
+      }
+      nav.main ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      nav.main a,
+      nav.main .dd-btn {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: space-between;
+        color: #fff;
+        text-decoration: none;
+        font: inherit;
+        font-weight: 600;
+        padding: 0.8rem 0.6rem;
+        background: none;
+        border: 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        cursor: pointer;
+        text-align: left;
+        min-height: 46px;
+      }
+      nav.main a:hover,
+      nav.main .dd-btn:hover {
+        color: var(--gold-light);
+      }
+      .dd-menu {
+        display: none;
+        padding-left: 1rem;
+        background: rgba(0, 0, 0, 0.18);
+      }
+      .dd.open > .dd-menu {
+        display: block;
+      }
+      .dd-btn::after {
+        content: "▾";
+        margin-left: 0.4rem;
+        transition: transform 0.2s;
+      }
+      .dd.open > .dd-btn::after {
+        transform: rotate(180deg);
+      }
+      .head-wa {
+        display: none;
+      }
+      .head-wa.show {
+        display: inline-flex;
+      }
+      @media (min-width: 960px) {
+        .menu-toggle {
+          display: none;
+        }
+        nav.main {
+          display: block;
+          position: static;
+          background: none;
+          border: 0;
+          padding: 0;
+          max-height: none;
+          overflow: visible;
+        }
+        nav.main > ul {
+          display: flex;
+          align-items: center;
+          gap: 0.1rem;
+        }
+        nav.main a,
+        nav.main .dd-btn {
+          border: 0;
+          padding: 0.5rem 0.65rem;
+          font-size: 0.93rem;
+          border-radius: 10px;
+          width: auto;
+          white-space: nowrap;
+        }
+        .dd {
+          position: relative;
+        }
+        .dd-menu {
+          position: absolute;
+          top: 100%;
+          left: 0;
+          min-width: 230px;
+          background: var(--green-900);
+          border: 1px solid var(--gold);
+          border-radius: 12px;
+          padding: 0.4rem;
+          box-shadow: var(--shadow-lg);
+        }
+        .dd-menu a {
+          border-radius: 8px;
+        }
+      }
+
+      /* ===================== HERO ===================== */
+      .hero {
+        position: relative;
+        color: #fff;
+        background:
+          radial-gradient(
+            circle at 80% 10%,
+            rgba(217, 178, 90, 0.25),
+            transparent 45%
+          ),
+          linear-gradient(160deg, var(--green-900), var(--green-700));
+        padding: 3.2rem 0 4rem;
+        overflow: hidden;
+      }
+      .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: var(--star);
+        opacity: 0.9;
+      }
+      .hero::after {
+        content: "";
+        position: absolute;
+        right: -90px;
+        top: -70px;
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        box-shadow: inset -42px 14px 0 0 rgba(217, 178, 90, 0.35);
+      }
+      .hero .container {
+        position: relative;
+        z-index: 1;
+        text-align: center;
+      }
+      .bismillah {
+        font-family: var(--font-ar);
+        font-size: clamp(1.9rem, 6vw, 2.9rem);
+        color: var(--gold-light);
+        direction: rtl;
+        margin: 0 0 0.2rem;
+        line-height: 1.8;
+      }
+      .bismillah-tr {
+        font-style: italic;
+        color: #d6e8de;
+        margin-bottom: 1.5rem;
+        font-size: 0.95rem;
+      }
+      .hero h1 {
+        color: #fff;
+        margin-bottom: 0.6rem;
+      }
+      .hero p.lead {
+        max-width: 680px;
+        margin: 0 auto 1.6rem;
+        color: #e4f0ea;
+        font-size: 1.08rem;
+      }
+      .hero .cta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.8rem;
+        justify-content: center;
+      }
+      .orn {
+        height: 14px;
+        margin: 1rem auto 0;
+        width: min(240px, 60%);
+        background: linear-gradient(
+          90deg,
+          transparent,
+          var(--gold-light),
+          transparent
+        );
+        mask: radial-gradient(circle 6px at 50% 50%, transparent 5px, #000 6px);
+        -webkit-mask: radial-gradient(
+          circle 6px at 50% 50%,
+          transparent 5px,
+          #000 6px
+        );
+        opacity: 0.8;
+      }
+
+      /* ===================== SECTIONS ===================== */
+      section.sec {
+        padding: 3.4rem 0;
+      }
+      section.alt {
+        background: var(--cream-2);
+        background-image: var(--star);
+      }
+      section.dark {
+        background: var(--green-900);
+        background-image: var(--star);
+        color: #eaf4ef;
+      }
+      section.dark h2,
+      section.dark h3 {
+        color: var(--gold-light);
+      }
+      .sec-head {
+        text-align: center;
+        max-width: 720px;
+        margin: 0 auto 2rem;
+      }
+      .sec-head p {
+        color: var(--ink-soft);
+      }
+      .sec-head::after {
+        content: "";
+        display: block;
+        width: 90px;
+        height: 3px;
+        margin: 0.8rem auto 0;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          var(--gold),
+          transparent
+        );
+      }
+      .grid {
+        display: grid;
+        gap: 1.1rem;
+      }
+      .g2 {
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+      }
+      .g3 {
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+      }
+      .card {
+        background: var(--white);
+        border: 1px solid var(--line);
+        border-top: 4px solid var(--gold);
+        border-radius: var(--radius);
+        padding: 1.2rem 1.25rem;
+        box-shadow: var(--shadow);
+        transition:
+          transform 0.25s,
+          box-shadow 0.25s;
+      }
+      .card:hover {
+        transform: translateY(-3px);
+        box-shadow: var(--shadow-lg);
+      }
+      .card.flat:hover {
+        transform: none;
+        box-shadow: var(--shadow);
+      }
+      .tag {
+        display: inline-block;
+        background: var(--green-100);
+        color: var(--green-800);
+        font-size: 0.78rem;
+        font-weight: 700;
+        border-radius: 999px;
+        padding: 0.15rem 0.7rem;
+        margin-bottom: 0.5rem;
+      }
+      .meta {
+        font-size: 0.88rem;
+        color: var(--ink-soft);
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.3rem 1rem;
+        margin-bottom: 0.6rem;
+      }
+      .draft {
+        border: 2px dashed var(--gold);
+        background: #fffaf0;
+        color: #6b4e0d;
+        border-radius: 12px;
+        padding: 0.6rem 0.9rem;
+        font-size: 0.88rem;
+        margin-bottom: 1rem;
+      }
+      .empty {
+        text-align: center;
+        padding: 2rem 1rem;
+        border: 2px dashed var(--line);
+        border-radius: var(--radius);
+        background: rgba(255, 255, 255, 0.7);
+        color: var(--ink-soft);
+      }
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.45rem;
+        margin-top: 0.8rem;
+      }
+      .chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.45rem;
+        margin: 0.8rem 0 1.2rem;
+      }
+      .chip {
+        font: inherit;
+        font-weight: 700;
+        font-size: 0.88rem;
+        border: 2px solid var(--green-700);
+        background: #fff;
+        color: var(--green-800);
+        border-radius: 999px;
+        padding: 0.35rem 0.9rem;
+        cursor: pointer;
+        min-height: 38px;
+      }
+      .chip[aria-pressed="true"] {
+        background: var(--green-700);
+        color: #fff;
+      }
+      .toolbar {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.8rem;
+        align-items: center;
+        margin-bottom: 0.6rem;
+      }
+      .toolbar select {
+        max-width: 240px;
+      }
+      .cardimg {
+        border-radius: 12px;
+        margin-bottom: 0.8rem;
+        aspect-ratio: 16/9;
+        object-fit: cover;
+        width: 100%;
+        background: var(--green-100);
+      }
+
+      /* Quick links */
+      .quick a {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 0.3rem;
+        text-decoration: none;
+        color: var(--green-900);
+        font-weight: 700;
+        padding: 1.1rem 0.6rem;
+        background: #fff;
+        border: 1px solid var(--line);
+        border-bottom: 4px solid var(--gold);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        transition: transform 0.2s;
+      }
+      .quick a:hover {
+        transform: translateY(-3px);
+      }
+      .quick .qa {
+        font-family: var(--font-ar);
+        font-size: 1.7rem;
+        color: var(--green-700);
+        line-height: 1.4;
+      }
+      .quick small {
+        font-weight: 400;
+        color: var(--ink-soft);
+      }
+
+      /* Verse / hadith / dua */
+      .arabic-block {
+        font-family: var(--font-ar);
+        direction: rtl;
+        text-align: right;
+        font-size: 1.65rem;
+        line-height: 2.2;
+        color: var(--green-900);
+        background: linear-gradient(180deg, #fffdf6, #fbf3dc);
+        border: 1px solid var(--gold-pale);
+        border-radius: 12px;
+        padding: 0.7rem 1rem;
+        margin: 0.5rem 0;
+      }
+      .translit {
+        font-style: italic;
+        color: var(--green-800);
+        font-size: 0.95rem;
+      }
+      .ref {
+        font-size: 0.85rem;
+        color: var(--ink-soft);
+        border-left: 3px solid var(--gold);
+        padding-left: 0.6rem;
+        margin-top: 0.5rem;
+      }
+      .verse-day {
+        background: linear-gradient(160deg, var(--green-800), var(--green-700));
+        color: #fff;
+        border: 0;
+        border-top: 4px solid var(--gold);
+      }
+      .verse-day .arabic-block {
+        background: rgba(255, 255, 255, 0.08);
+        border-color: rgba(217, 178, 90, 0.4);
+        color: #fff;
+      }
+      .verse-day .ref {
+        color: #d6e8de;
+      }
+      .verse-day h3 {
+        color: var(--gold-light);
+      }
+
+      /* Tabs */
+      .tabs {
+        display: flex;
+        gap: 0.4rem;
+        overflow-x: auto;
+        padding-bottom: 0.4rem;
+        margin-bottom: 1rem;
+        -webkit-overflow-scrolling: touch;
+      }
+      .tab {
+        flex: none;
+        font: inherit;
+        font-weight: 700;
+        border: 2px solid var(--green-700);
+        background: #fff;
+        color: var(--green-800);
+        border-radius: 12px 12px 0 0;
+        padding: 0.6rem 1.1rem;
+        cursor: pointer;
+        min-height: 44px;
+      }
+      .tab[aria-selected="true"] {
+        background: var(--green-700);
+        color: #fff;
+      }
+      .panel[hidden] {
+        display: none;
+      }
+
+      /* Prayer */
+      .prayer-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+        gap: 0.7rem;
+        margin: 1rem 0;
+      }
+      .pt {
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(217, 178, 90, 0.4);
+        border-radius: 12px;
+        text-align: center;
+        padding: 0.7rem 0.3rem;
+      }
+      .pt.next {
+        background: var(--gold);
+        color: #1a1200;
+        border-color: var(--gold);
+      }
+      .pt b {
+        display: block;
+        font-size: 1.35rem;
+        font-family: var(--font-head);
+      }
+      .clock {
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: var(--gold-light);
+      }
+      .status {
+        padding: 0.7rem 1rem;
+        border-radius: 12px;
+        font-weight: 600;
+      }
+      .status.err {
+        background: #fdecec;
+        color: var(--danger);
+        border: 1px solid #f0bcbc;
+      }
+      .status.ok {
+        background: var(--green-100);
+        color: var(--green-800);
+      }
+      .status.load {
+        background: #fff7de;
+        color: #6b4e0d;
+      }
+
+      /* Gallery */
+      .gal {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(min(100%, 230px), 1fr));
+        gap: 0.9rem;
+      }
+      .gal figure {
+        margin: 0;
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        overflow: hidden;
+        box-shadow: var(--shadow);
+      }
+      .gal button.thumb {
+        display: block;
+        width: 100%;
+        border: 0;
+        padding: 0;
+        background: none;
+        cursor: zoom-in;
+      }
+      .gal img,
+      .ph {
+        width: 100%;
+        aspect-ratio: 4/3;
+        object-fit: cover;
+      }
+      .ph {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 1rem;
+        background: repeating-linear-gradient(
+          45deg,
+          var(--green-100),
+          var(--green-100) 12px,
+          #cfe6da 12px,
+          #cfe6da 24px
+        );
+        color: var(--green-800);
+        font-weight: 700;
+        font-size: 0.9rem;
+      }
+      .gal figcaption {
+        padding: 0.7rem 0.9rem;
+        font-size: 0.9rem;
+      }
+
+      /* Overlay */
+      #overlay {
+        position: fixed;
+        inset: 0;
+        z-index: 400;
+        background: rgba(3, 25, 18, 0.82);
+        display: none;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem;
+      }
+      #overlay.open {
+        display: flex;
+      }
+      .ov-box {
+        background: #fff;
+        border-radius: var(--radius);
+        max-width: 900px;
+        width: 100%;
+        max-height: 92vh;
+        overflow: auto;
+        padding: 1.4rem;
+        position: relative;
+        border-top: 5px solid var(--gold);
+      }
+      .ov-close {
+        position: absolute;
+        right: 0.6rem;
+        top: 0.6rem;
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        border: 2px solid var(--green-700);
+        background: #fff;
+        font-size: 1.4rem;
+        cursor: pointer;
+        color: var(--green-800);
+        line-height: 1;
+      }
+      .ov-nav {
+        display: flex;
+        justify-content: space-between;
+        gap: 0.5rem;
+        margin-top: 0.8rem;
+      }
+      .ov-box img {
+        margin: 0 auto;
+        max-height: 62vh;
+        object-fit: contain;
+      }
+
+      /* Search results */
+      #siteResults {
+        margin-top: 1rem;
+      }
+      .res {
+        display: block;
+        text-decoration: none;
+        color: inherit;
+        padding: 0.8rem 1rem;
+        border: 1px solid var(--line);
+        border-left: 4px solid var(--gold);
+        border-radius: 12px;
+        background: #fff;
+        margin-bottom: 0.6rem;
+      }
+      .res:hover {
+        background: var(--cream);
+      }
+      .res small {
+        color: var(--ink-soft);
+      }
+
+      /* Footer */
+      footer.site {
+        background: var(--green-900);
+        background-image: var(--star);
+        color: #d6e8de;
+        padding: 3rem 0 1.2rem;
+        border-top: 4px solid var(--gold);
+      }
+      footer h3 {
+        color: var(--gold-light);
+        font-size: 1.05rem;
+      }
+      footer a {
+        color: #e9f3ee;
+        text-decoration: none;
+      }
+      footer a:hover {
+        color: var(--gold-light);
+        text-decoration: underline;
+      }
+      footer ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      footer li {
+        margin-bottom: 0.35rem;
+      }
+      .copy {
+        border-top: 1px solid rgba(255, 255, 255, 0.15);
+        margin-top: 1.6rem;
+        padding-top: 1rem;
+        text-align: center;
+        font-size: 0.9rem;
+      }
+
+      /* Toast / back top */
+      #toast {
+        position: fixed;
+        left: 50%;
+        bottom: 84px;
+        transform: translateX(-50%) translateY(20px);
+        background: var(--green-900);
+        color: #fff;
+        border: 2px solid var(--gold);
+        padding: 0.6rem 1.1rem;
+        border-radius: 999px;
+        opacity: 0;
+        pointer-events: none;
+        transition: 0.25s;
+        z-index: 500;
+        max-width: 90vw;
+        text-align: center;
+        font-weight: 600;
+      }
+      #toast.show {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+      }
+      #toTop {
+        position: fixed;
+        right: 16px;
+        bottom: 16px;
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        border: 2px solid var(--gold);
+        background: var(--green-800);
+        color: var(--gold-light);
+        font-size: 1.3rem;
+        cursor: pointer;
+        z-index: 150;
+        display: none;
+        box-shadow: var(--shadow-lg);
+      }
+      #toTop.show {
+        display: block;
+      }
+      .guide pre {
+        background: #0b2a20;
+        color: #e5f3ec;
+        padding: 1rem;
+        border-radius: 12px;
+        overflow-x: auto;
+        font-size: 0.82rem;
+        line-height: 1.5;
+      }
+      details.guide {
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 0.8rem 1rem;
+        margin-top: 1rem;
+      }
+      details.guide summary {
+        cursor: pointer;
+        font-weight: 700;
+        color: var(--green-800);
+      }
+      .hijri-now {
+        font-family: var(--font-head);
+        font-size: 1.3rem;
+        color: var(--green-800);
+      }
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation: none !important;
+          transition: none !important;
+          scroll-behavior: auto !important;
+        }
+      }
+      @media (max-width: 420px) {
+        .logo small {
+          display: none;
+        }
+        .ov-box {
+          padding: 1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip" href="#main">Ruka hadi maudhui makuu</a>
+
+    <!-- ===================== HEADER ===================== -->
+    <header class="site">
+      <div class="container bar">
+        <a class="logo" href="#mwanzo" aria-label="TRACDI MSA — Mwanzo">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path
+              d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5z"
+              fill="#d9b25a"
+            />
+            <path
+              d="M18 3l.7 1.6 1.7.2-1.3 1.2.4 1.7L18 6.8l-1.5.9.4-1.7-1.3-1.2 1.7-.2z"
+              fill="#fbf6e9"
+            />
+          </svg>
+          <span
+            ><b>TRACDI MSA</b><small>Muslim Students Association</small></span
+          >
+        </a>
+        <div style="display: flex; align-items: center; gap: 0.6rem">
+          <a
+            id="headWa"
+            class="btn btn-gold btn-sm head-wa"
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+            >WhatsApp</a
+          >
+          <button
+            class="menu-toggle"
+            id="menuToggle"
+            aria-expanded="false"
+            aria-controls="mainNav"
+            aria-label="Fungua menyu"
+          >
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+        <nav class="main" id="mainNav" aria-label="Menyu kuu">
+          <ul>
+            <li><a href="#mwanzo">Mwanzo</a></li>
+            <li class="dd">
+              <button class="dd-btn" aria-expanded="false" aria-haspopup="true">
+                Kuhusu Jumuiya
+              </button>
+              <ul class="dd-menu">
+                <li><a href="#kuhusu">Utambulisho na Malengo</a></li>
+                <li>
+                  <a href="#uongozi" id="navLeadership" hidden>Uongozi</a>
+                </li>
+                <li><a href="#swala">Nyakati za Swala</a></li>
+              </ul>
+            </li>
+            <li class="dd">
+              <button class="dd-btn" aria-expanded="false" aria-haspopup="true">
+                Shughuli na Matukio
+              </button>
+              <ul class="dd-menu">
+                <li><a href="#matukio">Matukio</a></li>
+                <li><a href="#kalenda">Kalenda ya Kiislamu</a></li>
+              </ul>
+            </li>
+            <li><a href="#matangazo">Matangazo</a></li>
+            <li class="dd">
+              <button class="dd-btn" aria-expanded="false" aria-haspopup="true">
+                Maktaba ya Kiislamu
+              </button>
+              <ul class="dd-menu">
+                <li><a href="#maktaba" data-tab="quran">Qur'an Tukufu</a></li>
+                <li><a href="#maktaba" data-tab="hadith">Hadith</a></li>
+                <li><a href="#maktaba" data-tab="dua">Mkusanyiko wa Dua</a></li>
+                <li><a href="#maktaba" data-tab="vikumbusho">Vikumbusho</a></li>
+                <li>
+                  <a href="#maktaba" data-tab="vipendwa">Vipendwa vyangu</a>
+                </li>
+              </ul>
+            </li>
+            <li><a href="#maswali">Maswali na Majibu</a></li>
+            <li><a href="#picha">Picha</a></li>
+            <li><a href="#mawasiliano">Mawasiliano</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <!-- ===================== MWANZO ===================== -->
+      <section class="hero" id="mwanzo" aria-labelledby="heroTitle">
+        <div class="container">
+          <p class="bismillah" lang="ar">
+            بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
+          </p>
+          <p class="bismillah-tr">
+            “Kwa jina la Mwenyezi Mungu, Mwingi wa rehema, Mwenye kurehemu.”
+          </p>
+          <h1 id="heroTitle">Karibu kwenye Jumuiya Yetu</h1>
+          <p class="lead">
+            TRACDI Muslim Students Association ni jukwaa la wanafunzi Waislamu
+            wa Tanzania Research and Career Development Institute (TRACDI),
+            Dodoma. Hapa tunaunganisha wanafunzi, kushiriki elimu yenye manufaa
+            ya Kiislamu, kutangaza shughuli, na kuhimiza udugu, tabia njema na
+            huduma kwa jamii.
+          </p>
+          <div class="cta">
+            <a class="btn btn-gold" href="#maktaba">Chunguza Tovuti</a>
+            <a class="btn btn-ghost" href="#mawasiliano">Wasiliana Nasi</a>
+          </div>
+          <div class="orn" aria-hidden="true"></div>
+        </div>
+      </section>
+
+      <section class="sec" aria-labelledby="searchTitle">
+        <div class="container">
+          <div class="sec-head">
+            <h2 id="searchTitle">Tafuta kwenye Tovuti</h2>
+            <p>Tafuta matangazo, matukio, vikumbusho, Qur'an, Hadith na Dua.</p>
+          </div>
+          <div style="display: flex; justify-content: center">
+            <div class="searchbox" style="width: 100%">
+              <label class="sr-only" for="siteSearch"
+                >Tafuta kwenye tovuti</label
+              >
+              <input
+                type="search"
+                id="siteSearch"
+                placeholder="Andika neno la kutafuta…"
+                autocomplete="off"
+                maxlength="80"
+              />
+              <button
+                type="button"
+                id="siteSearchClear"
+                aria-label="Futa utafutaji"
+                hidden
+              >
+                ×
+              </button>
+            </div>
+          </div>
+          <div id="siteResults" aria-live="polite"></div>
+        </div>
+      </section>
+
+      <section class="sec alt" aria-labelledby="homeTitle">
+        <div class="container">
+          <div class="sec-head"><h2 id="homeTitle">Muhtasari wa Leo</h2></div>
+          <div class="grid g2">
+            <article class="card verse-day flat" aria-labelledby="vodTitle">
+              <h3 id="vodTitle">Aya ya Leo</h3>
+              <div id="verseOfDay"></div>
+            </article>
+            <article class="card flat" aria-labelledby="swalaMini">
+              <h3 id="swalaMini">Nyakati za Swala — Dodoma</h3>
+              <p>Tazama nyakati kamili za Swala za Dodoma, Tanzania.</p>
+              <a class="btn btn-green btn-sm" href="#swala"
+                >Fungua Nyakati za Swala</a
+              >
+            </article>
+            <article class="card flat" aria-labelledby="homeAnn">
+              <h3 id="homeAnn">Matangazo ya Karibuni</h3>
+              <div id="homeAnnouncements"></div>
+              <a class="btn btn-outline btn-sm" href="#matangazo"
+                >Matangazo yote</a
+              >
+            </article>
+            <article class="card flat" aria-labelledby="homeEv">
+              <h3 id="homeEv">Matukio Yajayo</h3>
+              <div id="homeEvents"></div>
+              <a class="btn btn-outline btn-sm" href="#matukio">Matukio yote</a>
+            </article>
+            <article
+              class="card flat"
+              aria-labelledby="homeRem"
+              style="grid-column: 1/-1"
+            >
+              <h3 id="homeRem">Kikumbusho cha Kiislamu</h3>
+              <div id="homeReminder"></div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="sec" aria-labelledby="quickTitle">
+        <div class="container">
+          <div class="sec-head"><h2 id="quickTitle">Viungo vya Haraka</h2></div>
+          <div class="grid g3 quick">
+            <a href="#maktaba" data-tab="quran"
+              ><span class="qa" lang="ar">القرآن</span>Qur'an Tukufu<small
+                >Aya teule na tafsiri</small
+              ></a
+            >
+            <a href="#maktaba" data-tab="hadith"
+              ><span class="qa" lang="ar">الحديث</span>Hadith<small
+                >Kwa mada</small
+              ></a
+            >
+            <a href="#maktaba" data-tab="dua"
+              ><span class="qa" lang="ar">الدعاء</span>Dua<small
+                >Kiarabu, matamshi na tafsiri</small
+              ></a
+            >
+            <a href="#maswali"
+              ><span class="qa" aria-hidden="true">؟</span>Maswali ya
+              Wanafunzi<small>Uliza swali lako</small></a
+            >
+          </div>
+        </div>
+      </section>
+
+      <section class="sec alt" aria-labelledby="introTitle">
+        <div class="container" style="max-width: 820px; text-align: center">
+          <h2 id="introTitle">Jumuiya ya Udugu na Elimu</h2>
+          <p>
+            TRACDI MSA ni nafasi ya wanafunzi Waislamu kukutana, kujifunza,
+            kusaidiana na kukuza maadili mema chuoni. Mtume ﷺ amefundisha kuwa
+            waumini ni kama jengo, kila sehemu inaimarisha nyingine — na hiyo
+            ndiyo roho tunayoitafuta hapa.
+          </p>
+          <p class="hint">
+            Tovuti hii ni rasilimali ya jumuiya ya wanafunzi. Haichukui nafasi
+            ya wanazuoni wenye sifa.
+          </p>
+        </div>
+      </section>
+
+      <!-- ===================== KUHUSU ===================== -->
+      <section class="sec" id="kuhusu" aria-labelledby="aboutTitle">
+        <div class="container">
+          <div class="sec-head">
+            <h2 id="aboutTitle">Kuhusu Jumuiya</h2>
+            <p>Madhumuni na maadili ya TRACDI MSA.</p>
+          </div>
+          <!-- EDIT HERE: Kuhusu Jumuiya — badilisha maandishi kwenye ARRAY ya ABOUT chini kwenye <script> -->
+          <div class="draft">
+            <strong>Rasimu inayoweza kuhaririwa:</strong> Maandishi haya ni
+            mapendekezo tu na hayajaidhinishwa na jumuiya. Mmiliki ayabadilishe
+            kwenye <code>ABOUT</code> ndani ya <code>index.html</code>.
+          </div>
+          <div class="grid g2" id="aboutGrid"></div>
+          <div class="sec-head" style="margin-top: 2.5rem">
+            <h3>Umuhimu wa Msingi Wetu</h3>
+          </div>
+          <div class="grid g3" id="valuesGrid"></div>
+        </div>
+      </section>
+
+      <section class="sec alt" id="uongozi" hidden aria-labelledby="leadTitle">
+        <div class="container">
+          <div class="sec-head"><h2 id="leadTitle">Uongozi wa Jumuiya</h2></div>
+          <div class="grid g3" id="leadGrid"></div>
+        </div>
+      </section>
+
+      <!-- ===================== SWALA ===================== -->
+      <section class="sec dark" id="swala" aria-labelledby="swalaTitle">
+        <div class="container" style="max-width: 860px">
+          <div class="sec-head">
+            <h2 id="swalaTitle">Nyakati za Swala</h2>
+            <p style="color: #cfe3d8">
+              Mahali: <strong>Dodoma, Tanzania</strong>
+            </p>
+          </div>
+          <div style="text-align: center">
+            <div class="clock" id="clock" aria-live="off">—</div>
+            <div id="todayDate" class="hint" style="color: #cfe3d8"></div>
+          </div>
+          <div id="prayerStatus" class="status load" role="status">
+            Inapakia nyakati za Swala…
+          </div>
+          <div class="prayer-grid" id="prayerGrid" hidden></div>
+          <p class="hint" style="color: #cfe3d8">
+            Chanzo: huduma ya mtandaoni ya Aladhan (api.aladhan.com), njia ya
+            hesabu: <span id="methodName"></span>. Nyakati hizi si tangazo rasmi
+            la mamlaka yoyote ya kidini. Tafadhali thibitisha na msikiti wa eneo
+            lako au ratiba unayoiamini.
+          </p>
+          <button class="btn btn-gold btn-sm" id="retryPrayer" type="button">
+            Jaribu tena
+          </button>
+        </div>
+      </section>
+
+      <!-- ===================== MATUKIO ===================== -->
+      <section class="sec" id="matukio" aria-labelledby="evTitle">
+        <div class="container">
+          <div class="sec-head">
+            <h2 id="evTitle">Shughuli na Matukio</h2>
+            <p>
+              Darsa, mihadhara, vipindi vya Qur'an, Iftar, huduma kwa jamii,
+              mikusanyiko ya wanafunzi na warsha za elimu.
+            </p>
+          </div>
+          <div
+            class="chips"
+            id="evChips"
+            role="group"
+            aria-label="Chuja matukio kwa aina"
+          ></div>
+          <div class="grid g3" id="evGrid"></div>
+        </div>
+      </section>
+
+      <!-- ===================== KALENDA ===================== -->
+      <section class="sec alt" id="kalenda" aria-labelledby="calTitle">
+        <div class="container" style="max-width: 900px">
+          <div class="sec-head"><h2 id="calTitle">Kalenda ya Kiislamu</h2></div>
+          <div class="card flat" style="text-align: center">
+            <p class="hint" style="margin: 0">
+              Tarehe ya Hijria ya leo (kwa hesabu ya kalenda)
+            </p>
+            <div class="hijri-now" id="hijriNow">Inapakia…</div>
+            <p class="hint" style="margin: 0.4rem 0 0">
+              Chanzo: Aladhan. Mwanzo wa miezi ya Hijria na sikukuu hutegemea
+              kuonekana kwa mwezi na matangazo ya viongozi wa dini wa eneo
+              (BAKWATA au mamlaka ya mahali). Tarehe halisi Tanzania zinaweza
+              kutofautiana na hesabu hii.
+            </p>
+          </div>
+          <h3 style="margin-top: 1.8rem">
+            Matukio Muhimu ya Kiislamu (kwa tarehe ya Hijria)
+          </h3>
+          <div class="grid g3" id="obsGrid"></div>
+          <h3 style="margin-top: 1.8rem">
+            Tarehe Zilizothibitishwa Hapa Nchini
+          </h3>
+          <!-- EDIT HERE: Islamic calendar events — hariri CONFIRMED_DATES kwenye <script> -->
+          <div id="confirmedDates"></div>
+        </div>
+      </section>
+
+      <!-- ===================== MATANGAZO ===================== -->
+      <section class="sec" id="matangazo" aria-labelledby="annTitle">
+        <div class="container">
+          <div class="sec-head"><h2 id="annTitle">Matangazo</h2></div>
+          <!-- EDIT HERE: Announcements — hariri ANNOUNCEMENTS kwenye <script> -->
+          <div class="toolbar">
+            <div class="searchbox">
+              <label class="sr-only" for="annSearch">Tafuta matangazo</label
+              ><input
+                type="search"
+                id="annSearch"
+                placeholder="Tafuta matangazo…"
+                maxlength="80"
+              /><button
+                type="button"
+                id="annClear"
+                aria-label="Futa utafutaji wa matangazo"
+                hidden
+              >
+                ×
+              </button>
+            </div>
+            <div>
+              <label class="sr-only" for="annCat">Aina ya tangazo</label
+              ><select id="annCat">
+                <option value="">Aina zote</option>
+              </select>
+            </div>
+          </div>
+          <div class="grid g3" id="annGrid" aria-live="polite"></div>
+        </div>
+      </section>
+
+      <!-- ===================== MAKTABA ===================== -->
+      <section class="sec alt" id="maktaba" aria-labelledby="libTitle">
+        <div class="container">
+          <div class="sec-head">
+            <h2 id="libTitle">Maktaba ya Kiislamu</h2>
+            <p>
+              Qur'an, Hadith, Dua na vikumbusho. Vipendwa vinahifadhiwa kwenye
+              kifaa chako pekee, havisawazishwi kwenye vifaa vingine.
+            </p>
+          </div>
+          <div class="draft">
+            <strong>Tahadhari ya tafsiri:</strong> Maandishi ya Kiarabu na rejea
+            ni za vyanzo vinavyojulikana. Tafsiri za Kiswahili za maana ni
+            rasimu ya mmiliki — zinapaswa kulinganishwa na tafsiri ya Kiswahili
+            inayotambulika (mfano tafsiri ya Sheikh Ali Muhsin Al-Barwani) kabla
+            ya kuchapishwa rasmi.
+          </div>
+          <div class="tabs" role="tablist" aria-label="Sehemu za Maktaba">
+            <button
+              class="tab"
+              role="tab"
+              id="tab-quran"
+              aria-controls="panel-quran"
+              aria-selected="true"
+              data-tab="quran"
+            >
+              Qur'an Tukufu
+            </button>
+            <button
+              class="tab"
+              role="tab"
+              id="tab-hadith"
+              aria-controls="panel-hadith"
+              aria-selected="false"
+              data-tab="hadith"
+            >
+              Hadith
+            </button>
+            <button
+              class="tab"
+              role="tab"
+              id="tab-dua"
+              aria-controls="panel-dua"
+              aria-selected="false"
+              data-tab="dua"
+            >
+              Dua
+            </button>
+            <button
+              class="tab"
+              role="tab"
+              id="tab-vikumbusho"
+              aria-controls="panel-vikumbusho"
+              aria-selected="false"
+              data-tab="vikumbusho"
+            >
+              Vikumbusho
+            </button>
+            <button
+              class="tab"
+              role="tab"
+              id="tab-vipendwa"
+              aria-controls="panel-vipendwa"
+              aria-selected="false"
+              data-tab="vipendwa"
+            >
+              Vipendwa vyangu
+            </button>
+          </div>
+
+          <div
+            class="panel"
+            role="tabpanel"
+            id="panel-quran"
+            aria-labelledby="tab-quran"
+          >
+            <div class="toolbar">
+              <div class="searchbox">
+                <label class="sr-only" for="qSearch">Tafuta Qur'an</label
+                ><input
+                  type="search"
+                  id="qSearch"
+                  placeholder="Tafuta kwa jina la Sura au maneno…"
+                  maxlength="80"
+                /><button type="button" id="qClear" aria-label="Futa" hidden>
+                  ×
+                </button>
+              </div>
+            </div>
+            <!-- EDIT HERE: Verified Qur'an content — hariri QURAN kwenye <script> -->
+            <div class="grid g2" id="qGrid"></div>
+          </div>
+          <div
+            class="panel"
+            role="tabpanel"
+            id="panel-hadith"
+            aria-labelledby="tab-hadith"
+            hidden
+          >
+            <div class="toolbar">
+              <div class="searchbox">
+                <label class="sr-only" for="hSearch">Tafuta Hadith</label
+                ><input
+                  type="search"
+                  id="hSearch"
+                  placeholder="Tafuta Hadith…"
+                  maxlength="80"
+                /><button type="button" id="hClear" aria-label="Futa" hidden>
+                  ×
+                </button>
+              </div>
+            </div>
+            <div
+              class="chips"
+              id="hChips"
+              role="group"
+              aria-label="Mada za Hadith"
+            ></div>
+            <!-- EDIT HERE: Verified Hadith — hariri HADITH kwenye <script> -->
+            <div class="grid g2" id="hGrid"></div>
+          </div>
+          <div
+            class="panel"
+            role="tabpanel"
+            id="panel-dua"
+            aria-labelledby="tab-dua"
+            hidden
+          >
+            <div class="toolbar">
+              <div class="searchbox">
+                <label class="sr-only" for="dSearch">Tafuta Dua</label
+                ><input
+                  type="search"
+                  id="dSearch"
+                  placeholder="Tafuta Dua…"
+                  maxlength="80"
+                /><button type="button" id="dClear" aria-label="Futa" hidden>
+                  ×
+                </button>
+              </div>
+            </div>
+            <div
+              class="chips"
+              id="dChips"
+              role="group"
+              aria-label="Aina za Dua"
+            ></div>
+            <!-- EDIT HERE: Dua entries — hariri DUAS kwenye <script> -->
+            <div class="grid g2" id="dGrid"></div>
+          </div>
+          <div
+            class="panel"
+            role="tabpanel"
+            id="panel-vikumbusho"
+            aria-labelledby="tab-vikumbusho"
+            hidden
+          >
+            <div class="toolbar">
+              <div class="searchbox">
+                <label class="sr-only" for="rSearch">Tafuta vikumbusho</label
+                ><input
+                  type="search"
+                  id="rSearch"
+                  placeholder="Tafuta vikumbusho…"
+                  maxlength="80"
+                /><button type="button" id="rClear" aria-label="Futa" hidden>
+                  ×
+                </button>
+              </div>
+            </div>
+            <div
+              class="chips"
+              id="rChips"
+              role="group"
+              aria-label="Mada za vikumbusho"
+            ></div>
+            <!-- EDIT HERE: Islamic reminders — hariri REMINDERS kwenye <script> -->
+            <div class="grid g2" id="rGrid"></div>
+          </div>
+          <div
+            class="panel"
+            role="tabpanel"
+            id="panel-vipendwa"
+            aria-labelledby="tab-vipendwa"
+            hidden
+          >
+            <p class="hint">
+              Vipendwa vimehifadhiwa kwenye kivinjari cha kifaa hiki pekee
+              (localStorage). Havisawazishwi kwenye simu au kompyuta nyingine.
+            </p>
+            <div class="grid g2" id="favGrid"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== MASWALI ===================== -->
+      <section class="sec" id="maswali" aria-labelledby="qaTitle">
+        <div class="container" style="max-width: 900px">
+          <div class="sec-head"><h2 id="qaTitle">Maswali na Majibu</h2></div>
+          <div class="draft">
+            <strong>Tafadhali soma:</strong> Tovuti hii ni rasilimali ya jumuiya
+            ya wanafunzi, si mbadala wa wanazuoni wenye sifa. Kwa masuala ya
+            fatwa na hukumu za kidini, wasiliana na mwanazuoni unayemwamini.
+            Maswali ya umma hayaonyeshwi hapa kama majibu yaliyothibitishwa hadi
+            yapitiwe na wahusika.
+          </div>
+          <p>
+            Una swali kuhusu Uislamu au maisha ya chuo? Lituma kupitia fomu ya
+            <a href="#mawasiliano">Mawasiliano</a>. Hakuna haja ya akaunti.
+          </p>
+          <!-- EDIT HERE: Majibu yaliyopitiwa — hariri REVIEWED_QA kwenye <script> -->
+          <div id="qaList"></div>
+          <a
+            class="btn btn-green"
+            href="#mawasiliano"
+            data-topic="Swali la Kiislamu"
+            >Uliza Swali</a
+          >
+        </div>
+      </section>
+
+      <!-- ===================== PICHA ===================== -->
+      <section class="sec alt" id="picha" aria-labelledby="galTitle">
+        <div class="container">
+          <div class="sec-head"><h2 id="galTitle">Picha</h2></div>
+          <!-- EDIT HERE: Gallery images — hariri GALLERY kwenye <script> -->
+          <div class="gal" id="galGrid"></div>
+        </div>
+      </section>
+
+      <!-- ===================== MAWASILIANO ===================== -->
+      <section class="sec" id="mawasiliano" aria-labelledby="contactTitle">
+        <div class="container" style="max-width: 860px">
+          <div class="sec-head">
+            <h2 id="contactTitle">Maswali ya Wanafunzi na Mawasiliano</h2>
+            <p>Hakuna akaunti inayohitajika. Jina na mawasiliano ni hiari.</p>
+          </div>
+          <div class="card flat">
+            <div
+              id="formConfigNote"
+              class="status err"
+              hidden
+              role="status"
+            ></div>
+            <form id="contactForm" novalidate>
+              <div class="field">
+                <label for="cName">Jina (hiari)</label
+                ><input
+                  id="cName"
+                  name="name"
+                  maxlength="80"
+                  autocomplete="name"
+                />
+              </div>
+              <div class="field">
+                <label for="cTopic">Mada</label>
+                <select id="cTopic" name="topic" required>
+                  <option value="Swali la Kiislamu">Swali la Kiislamu</option>
+                  <option value="Swali la chuo / wanafunzi">
+                    Swali la chuo / wanafunzi
+                  </option>
+                  <option value="Wazo au pendekezo">Wazo au pendekezo</option>
+                  <option value="Kujiunga na shughuli">
+                    Kujiunga na shughuli
+                  </option>
+                  <option value="Mengineyo">Mengineyo</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="cMsg">Swali au ujumbe</label
+                ><textarea
+                  id="cMsg"
+                  name="message"
+                  required
+                  minlength="10"
+                  maxlength="1000"
+                  aria-describedby="cMsgErr cMsgHint"
+                ></textarea>
+                <div class="hint" id="cMsgHint">
+                  <span id="cCount">0</span>/1000 (angalau herufi 10)
+                </div>
+                <div class="error-text" id="cMsgErr" role="alert"></div>
+              </div>
+              <div class="field">
+                <label for="cContact"
+                  >Barua pepe au simu (hiari, kama unataka kujibiwa)</label
+                ><input
+                  id="cContact"
+                  name="contact"
+                  maxlength="120"
+                  autocomplete="off"
+                  aria-describedby="cContactErr"
+                />
+                <div class="error-text" id="cContactErr" role="alert"></div>
+              </div>
+              <div
+                class="field"
+                style="position: absolute; left: -9999px"
+                aria-hidden="true"
+              >
+                <label for="cWeb">Usijaze</label
+                ><input id="cWeb" tabindex="-1" autocomplete="off" />
+              </div>
+              <div class="field">
+                <label
+                  style="
+                    display: flex;
+                    gap: 0.6rem;
+                    align-items: flex-start;
+                    font-weight: 400;
+                  "
+                  ><input
+                    type="checkbox"
+                    id="cConsent"
+                    style="
+                      width: 22px;
+                      height: 22px;
+                      min-height: 0;
+                      margin-top: 0.2rem;
+                      flex: none;
+                    "
+                  /><span
+                    >Nakubali kuwa taarifa nitakazowasilisha zitahifadhiwa na
+                    kutumiwa na uongozi wa TRACDI MSA kujibu swali langu na
+                    kuboresha huduma za jumuiya. Sitatuma taarifa nyeti za
+                    siri.</span
+                  ></label
+                >
+                <div class="error-text" id="cConsentErr" role="alert"></div>
+              </div>
+              <button type="submit" class="btn btn-green" id="cSubmit">
+                Tuma Ujumbe
+              </button>
+              <div
+                id="formResult"
+                role="status"
+                aria-live="polite"
+                style="margin-top: 1rem"
+              ></div>
+            </form>
+          </div>
+          <div class="card flat" style="margin-top: 1.2rem">
+            <h3>WhatsApp</h3>
+            <div id="waContact"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer class="site">
+      <div class="container">
+        <div class="grid g3">
+          <div>
+            <div class="logo" style="margin-bottom: 0.6rem">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5z"
+                  fill="#d9b25a"
+                /></svg
+              ><b>TRACDI MSA</b>
+            </div>
+            <p>
+              Jumuiya ya wanafunzi Waislamu inayolenga kujenga udugu, elimu na
+              tabia njema. Eneo: Dodoma, Tanzania.
+            </p>
+          </div>
+          <div>
+            <h3>Viungo</h3>
+            <ul>
+              <li><a href="#mwanzo">Mwanzo</a></li>
+              <li><a href="#kuhusu">Kuhusu Jumuiya</a></li>
+              <li><a href="#matukio">Shughuli na Matukio</a></li>
+              <li><a href="#matangazo">Matangazo</a></li>
+              <li><a href="#maswali">Maswali na Majibu</a></li>
+              <li><a href="#picha">Picha</a></li>
+              <li><a href="#mawasiliano">Mawasiliano</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3>Maktaba ya Kiislamu</h3>
+            <ul>
+              <li><a href="#maktaba" data-tab="quran">Qur'an Tukufu</a></li>
+              <li><a href="#maktaba" data-tab="hadith">Hadith</a></li>
+              <li><a href="#maktaba" data-tab="dua">Dua</a></li>
+              <li><a href="#maktaba" data-tab="vikumbusho">Vikumbusho</a></li>
+              <li><a href="#swala">Nyakati za Swala</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3>Mawasiliano</h3>
+            <div id="footContact"></div>
+            <p>Dodoma, Tanzania</p>
+          </div>
+        </div>
+        <div class="copy">
+          <p
+            lang="ar"
+            class="ar"
+            style="text-align: center; font-size: 1.4rem; margin-bottom: 0.2rem"
+          >
+            جَزَاكُمُ اللَّهُ خَيْرًا
+          </p>
+          <p style="margin-bottom: 0.3rem">
+            Mwenyezi Mungu awabariki na kuwaongoza wote wanaotafuta elimu yenye
+            manufaa.
+          </p>
+          <p style="margin: 0">
+            © <span id="year"></span> TRACDI Muslim Students Association. Tovuti
+            hii si tovuti rasmi ya chuo. • <a href="admin.html">Msimamizi</a>
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <button id="toTop" aria-label="Rudi juu" type="button">↑</button>
+    <div id="toast" role="status" aria-live="polite"></div>
+    <div id="overlay" role="dialog" aria-modal="true" aria-label="Maelezo">
+      <div class="ov-box" id="ovBox"></div>
+    </div>
+
+    <script>
+      "use strict";
+      /* =====================================================================
+   MWONGOZO WA MMILIKI — Hariri sehemu zilizowekwa alama "EDIT HERE"
+   Maudhui yote yanabadilishwa kwa kuhariri ARRAYS hapa chini kwenye index.html.
+   ===================================================================== */
+
+      /* ---------- EDIT HERE: WhatsApp, mawasiliano na Supabase ---------- */
+      const CONFIG = {
+        // Weka kiungo halisi cha kikundi, mfano: "https://chat.whatsapp.com/XXXXXXXX". Acha "" kama hakipo.
+        whatsappGroupLink: "",
+        // Namba ya WhatsApp ya mawasiliano kwa muundo wa kimataifa bila "+" (mfano "2557XXXXXXXX"). Acha "" kama haipo.
+        whatsappNumber: "255718170176",
+        // Barua pepe ya jumuiya (hiari). Acha "" kama haipo.
+        contactEmail: "ayoubhafidhi1@gmail.com",
+        // Supabase: weka URL ya mradi na anon/publishable key PEKEE. Kamwe usiweke service-role key.
+        supabase: { url: "https://rpwgykkaojiqxrlgvdhd.supabase.co", anonKey: "sb_publishable_yE-LnK3_-vNp9LAJm9rG4g_8iQqPCNo", table: "submissions" },
+        // Njia ya hesabu ya Swala kwa Aladhan (3 = Muslim World League). Thibitisha na msikiti wa eneo lako.
+        prayer: {
+          city: "Dodoma",
+          country: "Tanzania",
+          method: 3,
+          methodName: "Muslim World League",
+          timezone: "Africa/Dar_es_Salaam",
+        },
+      };
+
+      /* ---------- EDIT HERE: Kuhusu Jumuiya (RASIMU) ---------- */
+      const ABOUT = [
+        {
+          title: "Utambulisho wa Jumuiya",
+          text: "TRACDI MSA ni jumuiya ya wanafunzi Waislamu wa Tanzania Research and Career Development Institute, Dodoma. (Rasimu — mmiliki aandike utambulisho rasmi.)",
+        },
+        {
+          title: "Dira",
+          text: "Kuwa jumuiya ya wanafunzi yenye umoja, elimu, na tabia njema. (Rasimu — haijaidhinishwa.)",
+        },
+        {
+          title: "Dhima",
+          text: "Kuwaunganisha wanafunzi Waislamu, kushiriki elimu yenye manufaa, na kusaidia jamii. (Rasimu — haijaidhinishwa.)",
+        },
+        {
+          title: "Malengo",
+          text: "Kuhimiza ibada, kukuza udugu, kutoa elimu ya Kiislamu, na kushiriki huduma kwa jamii. (Rasimu — mmiliki aweke malengo rasmi.)",
+        },
+        {
+          title: "Maadili ya Jumuiya",
+          text: "Ikhlasi, uaminifu, heshima, huruma, subira na kusaidiana. (Rasimu — mmiliki ayathibitishe.)",
+        },
+      ];
+      const VALUES = [
+        {
+          title: "Umoja",
+          text: "Waumini husaidiana na kuimarishana kama jengo moja.",
+        },
+        {
+          title: "Elimu",
+          text: "Kutafuta elimu ni jukumu na njia ya kheri duniani na akhera.",
+        },
+        {
+          title: "Ibada",
+          text: "Kuimarisha Swala, Qur'an na dhikri katika maisha ya chuo.",
+        },
+        {
+          title: "Tabia njema",
+          text: "Kuwa mfano mwema kwa maneno, vitendo na mwenendo.",
+        },
+        {
+          title: "Kusaidiana",
+          text: "Kuhudumiana na kuhudumia jamii kwa moyo wa huruma.",
+        },
+      ];
+
+      /* ---------- EDIT HERE: Uongozi (acha tupu hadi majina halisi yapatikane; sehemu itabaki imefichwa) ---------- */
+      // Mfano: { name: "Jina Kamili", role: "Mwenyekiti", photo: "picha/jina.jpg" }
+      const LEADERSHIP = [];
+
+      /* ---------- EDIT HERE: Matangazo ---------- */
+      // Kila tangazo: { id, title, date:"YYYY-MM-DD", category, description, image:"", link:"", linkLabel:"" }
+      // Mfano (ondoa alama za maoni ili kutumia):
+      // { id:"t1", title:"Kichwa cha tangazo", date:"2026-10-20", category:"Jumla", description:"Maelezo kamili…", image:"", link:"", linkLabel:"" }
+      const ANNOUNCEMENTS = [];
+
+      /* ---------- EDIT HERE: Matukio ---------- */
+      // Kila tukio: { id, title, category, date:"YYYY-MM-DD", time:"16:00", location, description, image:"" }
+      const EVENT_CATEGORIES = [
+        "Darsa na mihadhara",
+        "Qur'an",
+        "Iftar na Ramadan",
+        "Huduma kwa jamii",
+        "Mikusanyiko ya wanafunzi",
+        "Warsha za elimu",
+      ];
+      const EVENTS = [];
+
+      /* ---------- EDIT HERE: Picha ---------- */
+      // Kila picha: { src:"picha/jina.jpg", alt:"Maelezo mafupi ya picha", caption:"Kichwa", description:"Maelezo" }
+      // Tumia picha halisi za jumuiya pekee.
+      const GALLERY = [];
+
+      /* ---------- EDIT HERE: Matukio ya kalenda ya Kiislamu (tarehe zilizothibitishwa na mamlaka ya hapa) ---------- */
+      // Mfano: { title:"Eid al-Fitr", date:"2027-03-10", note:"Imetangazwa na …" }
+      const CONFIRMED_DATES = [];
+      // Matukio yanayojulikana kwa tarehe ya Hijria (hayategemei tarehe ya Gregori)
+      const OBSERVANCES = [
+        {
+          title: "Mwanzo wa Ramadhani",
+          hijri: "1 Ramadhani",
+          note: "Mwezi wa kufunga.",
+        },
+        {
+          title: "Eid al-Fitr",
+          hijri: "1 Shawwal",
+          note: "Sikukuu baada ya Ramadhani.",
+        },
+        {
+          title: "Siku ya Arafa",
+          hijri: "9 Dhul-Hijjah",
+          note: "Siku ya Arafa ya Hija.",
+        },
+        {
+          title: "Eid al-Adha",
+          hijri: "10 Dhul-Hijjah",
+          note: "Sikukuu ya kuchinja.",
+        },
+        {
+          title: "Mwaka Mpya wa Hijria",
+          hijri: "1 Muharram",
+          note: "Mwanzo wa mwaka wa Hijria.",
+        },
+        {
+          title: "Siku ya Ashura",
+          hijri: "10 Muharram",
+          note: "Siku ya kufunga inayopendekezwa.",
+        },
+      ];
+
+      /* ---------- EDIT HERE: Qur'an (maandishi ya Kiarabu ya Uthmani; tafsiri ya maana ni rasimu ya Kiswahili) ---------- */
+      const QURAN = [
+        {
+          id: "q1",
+          surah: "Al-Fatiha",
+          num: 1,
+          ayah: "1",
+          ar: "بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ",
+          sw: "Kwa jina la Mwenyezi Mungu, Mwingi wa rehema, Mwenye kurehemu.",
+        },
+        {
+          id: "q2",
+          surah: "Al-Ikhlas",
+          num: 112,
+          ayah: "1-4",
+          ar: "قُلْ هُوَ اللَّهُ أَحَدٌ ۝ اللَّهُ الصَّمَدُ ۝ لَمْ يَلِدْ وَلَمْ يُولَدْ ۝ وَلَمْ يَكُن لَّهُ كُفُوًا أَحَدٌ",
+          sw: "Sema: Yeye ni Mwenyezi Mungu, Mmoja. Mwenyezi Mungu ndiye anayetegemewa na wote. Hakuzaa wala hakuzaliwa. Wala hana anayefanana naye hata mmoja.",
+        },
+        {
+          id: "q3",
+          surah: "Ash-Sharh",
+          num: 94,
+          ayah: "5-6",
+          ar: "فَإِنَّ مَعَ الْعُسْرِ يُسْرًا ۝ إِنَّ مَعَ الْعُسْرِ يُسْرًا",
+          sw: "Kwa hakika pamoja na ugumu pana wepesi. Hakika pamoja na ugumu pana wepesi.",
+        },
+        {
+          id: "q4",
+          surah: "Ta-Ha",
+          num: 20,
+          ayah: "114",
+          ar: "وَقُل رَّبِّ زِدْنِي عِلْمًا",
+          sw: "Na sema: Mola wangu, nizidishie elimu.",
+        },
+        {
+          id: "q5",
+          surah: "Al-Hujurat",
+          num: 49,
+          ayah: "10",
+          ar: "إِنَّمَا الْمُؤْمِنُونَ إِخْوَةٌ فَأَصْلِحُوا بَيْنَ أَخَوَيْكُمْ ۚ وَاتَّقُوا اللَّهَ لَعَلَّكُمْ تُرْحَمُونَ",
+          sw: "Hakika waumini ni ndugu; basi suluhisheni baina ya ndugu zenu, na mcheni Mwenyezi Mungu ili mrehemewe.",
+        },
+        {
+          id: "q6",
+          surah: "Ibrahim",
+          num: 14,
+          ayah: "7",
+          ar: "لَئِن شَكَرْتُمْ لَأَزِيدَنَّكُمْ",
+          sw: "Mkishukuru, bila shaka nitakuzidishieni.",
+        },
+        {
+          id: "q7",
+          surah: "Al-Baqarah",
+          num: 2,
+          ayah: "153",
+          ar: "يَا أَيُّهَا الَّذِينَ آمَنُوا اسْتَعِينُوا بِالصَّبْرِ وَالصَّلَاةِ ۚ إِنَّ اللَّهَ مَعَ الصَّابِرِينَ",
+          sw: "Enyi mlioamini! Takeni msaada kwa subira na Swala. Hakika Mwenyezi Mungu yu pamoja na wanaosubiri.",
+        },
+        {
+          id: "q8",
+          surah: "Az-Zumar",
+          num: 39,
+          ayah: "9 (sehemu)",
+          ar: "قُلْ هَلْ يَسْتَوِي الَّذِينَ يَعْلَمُونَ وَالَّذِينَ لَا يَعْلَمُونَ",
+          sw: "Sema: Je, wanaelewa na wasioelewa wanalingana?",
+        },
+        {
+          id: "q9",
+          surah: "Al-Baqarah",
+          num: 2,
+          ayah: "286 (sehemu)",
+          ar: "لَا يُكَلِّفُ اللَّهُ نَفْسًا إِلَّا وُسْعَهَا",
+          sw: "Mwenyezi Mungu haikalifishi nafsi yoyote ila kwa kadiri ya uwezo wake.",
+        },
+      ];
+      const QURAN_SOURCE =
+        "Maandishi ya Kiarabu: Qur'an Tukufu (Uthmani). Tafsiri ya maana: rasimu ya Kiswahili — ilinganishwe na tafsiri inayotambulika.";
+
+      /* ---------- EDIT HERE: Hadith ---------- */
+      const HADITH_TOPICS = [
+        "Nia",
+        "Tabia njema",
+        "Elimu",
+        "Huruma",
+        "Umoja",
+        "Subira",
+        "Ibada",
+      ];
+      const HADITH = [
+        {
+          id: "h1",
+          topic: "Nia",
+          ar: "إِنَّمَا الْأَعْمَالُ بِالنِّيَّاتِ، وَإِنَّمَا لِكُلِّ امْرِئٍ مَا نَوَى",
+          sw: "Hakika matendo hutegemea nia, na kila mtu atapata kile alichokusudia.",
+          source: "Sahih al-Bukhari, Na. 1; Sahih Muslim, Na. 1907",
+          grade: "Sahih (Bukhari na Muslim)",
+        },
+        {
+          id: "h2",
+          topic: "Tabia njema",
+          ar: "مَنْ كَانَ يُؤْمِنُ بِاللَّهِ وَالْيَوْمِ الْآخِرِ فَلْيَقُلْ خَيْرًا أَوْ لِيَصْمُتْ",
+          sw: "Anayemwamini Mwenyezi Mungu na Siku ya Mwisho, na aseme jema au anyamaze.",
+          source: "Sahih al-Bukhari, Na. 6018; Sahih Muslim, Na. 47",
+          grade: "Sahih (Bukhari na Muslim)",
+        },
+        {
+          id: "h3",
+          topic: "Elimu",
+          ar: "مَنْ سَلَكَ طَرِيقًا يَلْتَمِسُ فِيهِ عِلْمًا سَهَّلَ اللَّهُ لَهُ بِهِ طَرِيقًا إِلَى الْجَنَّةِ",
+          sw: "Anayefuata njia akitafuta elimu, Mwenyezi Mungu humrahisishia kwa njia hiyo njia ya kwenda Peponi.",
+          source: "Sahih Muslim, Na. 2699",
+          grade: "Sahih (Muslim)",
+        },
+        {
+          id: "h4",
+          topic: "Huruma",
+          ar: "الرَّاحِمُونَ يَرْحَمُهُمُ الرَّحْمَنُ، ارْحَمُوا مَنْ فِي الْأَرْضِ يَرْحَمْكُمْ مَنْ فِي السَّمَاءِ",
+          sw: "Wenye huruma, Mwingi wa Rehema huwarehemu. Wahurumieni walioko duniani atakuhurumieni aliye mbinguni.",
+          source: "Sunan Abi Dawud, Na. 4941; Jami' at-Tirmidhi, Na. 1924",
+          grade:
+            "Imepokewa na Abu Dawud na Tirmidhi — daraja lithibitishwe kwa mwanazuoni wa hadithi",
+        },
+        {
+          id: "h5",
+          topic: "Umoja",
+          ar: "الْمُؤْمِنُ لِلْمُؤْمِنِ كَالْبُنْيَانِ يَشُدُّ بَعْضُهُ بَعْضًا",
+          sw: "Muumini kwa muumini mwenzake ni kama jengo, sehemu moja huimarisha nyingine.",
+          source: "Sahih al-Bukhari, Na. 481; Sahih Muslim, Na. 2585",
+          grade: "Sahih (Bukhari na Muslim)",
+        },
+        {
+          id: "h6",
+          topic: "Umoja",
+          ar: "لَا يُؤْمِنُ أَحَدُكُمْ حَتَّى يُحِبَّ لِأَخِيهِ مَا يُحِبُّ لِنَفْسِهِ",
+          sw: "Hatoamini mmoja wenu mpaka ampendelee ndugu yake kile anachojipendelea mwenyewe.",
+          source: "Sahih al-Bukhari, Na. 13; Sahih Muslim, Na. 45",
+          grade: "Sahih (Bukhari na Muslim)",
+        },
+        {
+          id: "h7",
+          topic: "Subira",
+          ar: "وَمَنْ يَتَصَبَّرْ يُصَبِّرْهُ اللَّهُ",
+          sw: "Anayejitahidi kusubiri, Mwenyezi Mungu atamjaalia subira. (sehemu ya Hadith ndefu)",
+          source: "Sahih al-Bukhari, Na. 1469; Sahih Muslim, Na. 1053",
+          grade: "Sahih (Bukhari na Muslim)",
+        },
+        {
+          id: "h8",
+          topic: "Ibada",
+          ar: "بُنِيَ الْإِسْلَامُ عَلَى خَمْسٍ: شَهَادَةِ أَنْ لَا إِلَٰهَ إِلَّا اللَّهُ وَأَنَّ مُحَمَّدًا رَسُولُ اللَّهِ، وَإِقَامِ الصَّلَاةِ، وَإِيتَاءِ الزَّكَاةِ، وَالْحَجِّ، وَصَوْمِ رَمَضَانَ",
+          sw: "Uislamu umejengwa juu ya mambo matano: kushuhudia kuwa hapana mungu apasaye kuabudiwa ila Mwenyezi Mungu na kuwa Muhammad ni Mtume wake, kusimamisha Swala, kutoa Zaka, Hija, na kufunga Ramadhani.",
+          source: "Sahih al-Bukhari, Na. 8; Sahih Muslim, Na. 16",
+          grade: "Sahih (Bukhari na Muslim)",
+        },
+      ];
+
+      /* ---------- EDIT HERE: Dua ---------- */
+      const DUA_CATS = [
+        "Asubuhi na jioni",
+        "Kuingia na kutoka",
+        "Elimu",
+        "Msamaha",
+        "Safari",
+        "Dua za jumla",
+      ];
+      const DUAS = [
+        {
+          id: "d1",
+          cat: "Asubuhi na jioni",
+          title: "Ulinzi wa asubuhi na jioni",
+          ar: "بِسْمِ اللَّهِ الَّذِي لَا يَضُرُّ مَعَ اسْمِهِ شَيْءٌ فِي الْأَرْضِ وَلَا فِي السَّمَاءِ وَهُوَ السَّمِيعُ الْعَلِيمُ",
+          tr: "Bismillahi-lladhi la yadurru ma'asmihi shay'un fil-ardi wa la fis-sama'i wa huwas-Sami'ul-'Alim.",
+          sw: "Kwa jina la Mwenyezi Mungu ambaye kwa jina lake hakuna kinachodhuru ardhini wala mbinguni, naye ni Mwenye kusikia, Mwenye kujua. (husomwa mara tatu asubuhi na jioni)",
+          source: "Sunan Abi Dawud, Na. 5088; Jami' at-Tirmidhi, Na. 3388",
+        },
+        {
+          id: "d2",
+          cat: "Asubuhi na jioni",
+          title: "Wakati wa kuamka",
+          ar: "الْحَمْدُ لِلَّهِ الَّذِي أَحْيَانَا بَعْدَ مَا أَمَاتَنَا وَإِلَيْهِ النُّشُورُ",
+          tr: "Alhamdu lillahi-lladhi ahyana ba'da ma amatana wa ilayhin-nushur.",
+          sw: "Sifa njema zote ni za Mwenyezi Mungu aliyetuhuisha baada ya kutufisha, na kwake ndiko kufufuliwa.",
+          source: "Sahih al-Bukhari, Na. 6312",
+        },
+        {
+          id: "d3",
+          cat: "Kuingia na kutoka",
+          title: "Kuingia msikitini",
+          ar: "اللَّهُمَّ افْتَحْ لِي أَبْوَابَ رَحْمَتِكَ",
+          tr: "Allahumma iftah li abwaba rahmatik.",
+          sw: "Ewe Mwenyezi Mungu, nifungulie milango ya rehema zako.",
+          source: "Sahih Muslim, Na. 713",
+        },
+        {
+          id: "d4",
+          cat: "Kuingia na kutoka",
+          title: "Kutoka msikitini",
+          ar: "اللَّهُمَّ إِنِّي أَسْأَلُكَ مِنْ فَضْلِكَ",
+          tr: "Allahumma inni as'aluka min fadlik.",
+          sw: "Ewe Mwenyezi Mungu, hakika mimi nakuomba katika fadhila zako.",
+          source: "Sahih Muslim, Na. 713",
+        },
+        {
+          id: "d5",
+          cat: "Elimu",
+          title: "Kuomba kuongezewa elimu",
+          ar: "رَّبِّ زِدْنِي عِلْمًا",
+          tr: "Rabbi zidni 'ilma.",
+          sw: "Mola wangu, nizidishie elimu.",
+          source: "Qur'an, Surat Ta-Ha (20):114",
+        },
+        {
+          id: "d6",
+          cat: "Msamaha",
+          title: "Kuomba msamaha",
+          ar: "رَبَّنَا ظَلَمْنَا أَنفُسَنَا وَإِن لَّمْ تَغْفِرْ لَنَا وَتَرْحَمْنَا لَنَكُونَنَّ مِنَ الْخَاسِرِينَ",
+          tr: "Rabbana zalamna anfusana wa il-lam taghfir lana wa tarhamna lanakunanna minal-khasirin.",
+          sw: "Mola wetu, tumejidhulumu nafsi zetu; na usipotusamehe na kuturehemu, bila shaka tutakuwa miongoni mwa wenye khasara.",
+          source: "Qur'an, Surat Al-A'raf (7):23",
+        },
+        {
+          id: "d7",
+          cat: "Safari",
+          title: "Dua ya kusafiri",
+          ar: "سُبْحَانَ الَّذِي سَخَّرَ لَنَا هَٰذَا وَمَا كُنَّا لَهُ مُقْرِنِينَ وَإِنَّا إِلَىٰ رَبِّنَا لَمُنقَلِبُونَ",
+          tr: "Subhanal-ladhi sakhkhara lana hadha wa ma kunna lahu muqrinin, wa inna ila Rabbina lamunqalibun.",
+          sw: "Ametakasika yule aliyetutiishia haya, na sisi hatukuwa wenye uwezo wa kuyatawala. Na hakika kwa Mola wetu tutarejea.",
+          source: "Qur'an, Surat Az-Zukhruf (43):13-14",
+        },
+        {
+          id: "d8",
+          cat: "Dua za jumla",
+          title: "Dua ya kheri ya dunia na akhera",
+          ar: "رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً وَفِي الْآخِرَةِ حَسَنَةً وَقِنَا عَذَابَ النَّارِ",
+          tr: "Rabbana atina fid-dunya hasanatan wa fil-akhirati hasanatan wa qina 'adhaban-nar.",
+          sw: "Mola wetu, tupe duniani mema na akhera mema, na utulinde na adhabu ya Moto.",
+          source: "Qur'an, Surat Al-Baqarah (2):201",
+        },
+      ];
+
+      /* ---------- EDIT HERE: Vikumbusho vya Kiislamu ---------- */
+      const REMINDER_TOPICS = [
+        "Sala",
+        "Qur'an",
+        "Subira",
+        "Shukrani",
+        "Tabia njema",
+        "Kutafuta elimu",
+        "Udugu na kusaidiana",
+      ];
+      const REMINDERS = [
+        {
+          id: "r1",
+          topic: "Sala",
+          text: "Swala ni nguzo ya dini. Jitahidi kuswali kwa wakati, hata katikati ya ratiba za masomo.",
+          ref: "Rejea: Hadith ya nguzo tano — Bukhari 8, Muslim 16",
+        },
+        {
+          id: "r2",
+          topic: "Qur'an",
+          text: "Weka muda mdogo kila siku wa kusoma au kusikiliza Qur'an. Uthabiti ni bora kuliko wingi wa siku moja.",
+          ref: "Kikumbusho cha jumla",
+        },
+        {
+          id: "r3",
+          topic: "Subira",
+          text: "Mitihani na changamoto za chuo ni mtihani wa subira. Kumbuka: pamoja na ugumu pana wepesi.",
+          ref: "Rejea: Qur'an 94:5-6",
+        },
+        {
+          id: "r4",
+          topic: "Shukrani",
+          text: "Shukuru kwa neema ulizonazo, kubwa na ndogo. Mwenyezi Mungu ameahidi kuzizidisha kwa wanaoshukuru.",
+          ref: "Rejea: Qur'an 14:7",
+        },
+        {
+          id: "r5",
+          topic: "Tabia njema",
+          text: "Kabla ya kusema, jiulize: je ni jema? Kama sivyo, kunyamaza ni bora.",
+          ref: "Rejea: Bukhari 6018, Muslim 47",
+        },
+        {
+          id: "r6",
+          topic: "Kutafuta elimu",
+          text: "Kusoma kwa nia njema ni njia ya kheri. Weka nia ya kunufaisha jamii kupitia elimu yako.",
+          ref: "Rejea: Muslim 2699",
+        },
+        {
+          id: "r7",
+          topic: "Udugu na kusaidiana",
+          text: "Mpendelee ndugu yako kile unachojipendelea mwenyewe. Msaidie mwanafunzi mwenzako leo.",
+          ref: "Rejea: Bukhari 13, Muslim 45",
+        },
+      ];
+
+      /* ---------- EDIT HERE: Majibu yaliyopitiwa (acha tupu hadi yawe yamepitiwa na mwanazuoni) ---------- */
+      // Mfano: { q:"Swali…", a:"Jibu lililopitiwa…", reviewer:"Jina/Cheo cha aliyepitia", source:"Rejea" }
+      const REVIEWED_QA = [];
+
+      /* =====================================================================
+   MSINGI WA KIUFUNDI — usibadilishe isipokuwa unajua unachofanya
+   ===================================================================== */
+      const $ = (s, r = document) => r.querySelector(s);
+      const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
+      const esc = (v) =>
+        String(v ?? "").replace(
+          /[&<>"']/g,
+          (c) =>
+            ({
+              "&": "&amp;",
+              "<": "&lt;",
+              ">": "&gt;",
+              '"': "&quot;",
+              "'": "&#39;",
+            })[c],
+        );
+      const norm = (s) =>
+        String(s ?? "")
+          .toLowerCase()
+          .normalize("NFD")
+          .replace(/[\u0300-\u036f\u064b-\u065f\u0670\u06d6-\u06ed]/g, "");
+      const isUrl = (u) => typeof u === "string" && /^https:\/\//i.test(u);
+      const REG = {}; // id -> { type, title, text }
+      let toastTimer;
+      function toast(msg) {
+        const t = $("#toast");
+        t.textContent = msg;
+        t.classList.add("show");
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(() => t.classList.remove("show"), 2400);
+      }
+
+      /* Favorites (localStorage, kifaa hiki pekee) */
+      const FAV_KEY = "tracdi_msa_favs_v1";
+      function getFavs() {
+        try {
+          const v = JSON.parse(localStorage.getItem(FAV_KEY) || "[]");
+          return Array.isArray(v) ? v : [];
+        } catch (e) {
+          return [];
+        }
+      }
+      function setFavs(a) {
+        try {
+          localStorage.setItem(FAV_KEY, JSON.stringify(a));
+          return true;
+        } catch (e) {
+          return false;
+        }
+      }
+      function toggleFav(id) {
+        const f = getFavs(),
+          i = f.indexOf(id);
+        if (i >= 0) {
+          f.splice(i, 1);
+        } else {
+          f.push(id);
+        }
+        if (!setFavs(f)) {
+          toast("Imeshindwa kuhifadhi. Kivinjari kimezuia hifadhi.");
+          return;
+        }
+        toast(
+          i >= 0
+            ? "Imeondolewa kwenye vipendwa"
+            : "Imehifadhiwa kwenye vipendwa (kifaa hiki)",
+        );
+        refreshFavUI();
+      }
+      function refreshFavUI() {
+        const f = getFavs();
+        $$('[data-act="fav"]').forEach((b) => {
+          const on = f.includes(b.dataset.id);
+          b.setAttribute("aria-pressed", on);
+          b.textContent = on ? "★ Imehifadhiwa" : "☆ Hifadhi";
+        });
+        renderFavs();
+      }
+
+      /* Copy / Share / WhatsApp */
+      async function copyText(t) {
+        try {
+          if (navigator.clipboard && window.isSecureContext) {
+            await navigator.clipboard.writeText(t);
+            return true;
+          }
+        } catch (e) {}
+        try {
+          const ta = document.createElement("textarea");
+          ta.value = t;
+          ta.setAttribute("readonly", "");
+          ta.style.position = "fixed";
+          ta.style.opacity = "0";
+          document.body.appendChild(ta);
+          ta.select();
+          const ok = document.execCommand("copy");
+          ta.remove();
+          return ok;
+        } catch (e) {
+          return false;
+        }
+      }
+      function shareMsg(item) {
+        return `${item.title}\n\n${item.text}\n\n— TRACDI MSA`;
+      }
+      async function doShare(item) {
+        const text = shareMsg(item);
+        const url = /^https?:/i.test(location.href)
+          ? location.href.split("#")[0]
+          : undefined;
+        if (navigator.share) {
+          try {
+            await navigator.share(
+              url
+                ? { title: item.title, text, url }
+                : { title: item.title, text },
+            );
+            return;
+          } catch (e) {
+            if (e && e.name === "AbortError") return;
+          }
+        }
+        (await copyText(url ? text + "\n" + url : text))
+          ? toast("Kushiriki hakupatikani; maandishi yamenakiliwa")
+          : toast("Imeshindwa kunakili");
+      }
+      function waUrl(text) {
+        return "https://wa.me/?text=" + encodeURIComponent(text);
+      }
+      function actions(id, opts = {}) {
+        const f = getFavs().includes(id);
+        return `<div class="actions">
+    <button class="btn btn-outline btn-sm" type="button" data-act="copy" data-id="${esc(id)}">Nakili</button>
+    <button class="btn btn-outline btn-sm" type="button" data-act="share" data-id="${esc(id)}">Shiriki</button>
+    <button class="btn btn-green btn-sm" type="button" data-act="wa" data-id="${esc(id)}">WhatsApp</button>
+    ${opts.noFav ? "" : `<button class="btn btn-outline btn-sm" type="button" data-act="fav" data-id="${esc(id)}" aria-pressed="${f}">${f ? "★ Imehifadhiwa" : "☆ Hifadhi"}</button>`}
+  </div>`;
+      }
+      document.addEventListener("click", async (e) => {
+        const b = e.target.closest("[data-act]");
+        if (!b) return;
+        const id = b.dataset.id,
+          item = REG[id],
+          act = b.dataset.act;
+        if (!item) return;
+        if (act === "copy") {
+          (await copyText(shareMsg(item)))
+            ? toast("Imenakiliwa")
+            : toast("Imeshindwa kunakili. Nakili kwa mkono.");
+        } else if (act === "share") {
+          doShare(item);
+        } else if (act === "wa") {
+          const w = window.open(
+            waUrl(shareMsg(item)),
+            "_blank",
+            "noopener,noreferrer",
+          );
+          if (!w)
+            toast(
+              "Kivinjari kimezuia dirisha jipya. Ruhusu madirisha ibukizi.",
+            );
+        } else if (act === "fav") {
+          toggleFav(id);
+        } else if (act === "remove-fav") {
+          toggleFav(id);
+        }
+      });
+
+      /* Tarehe */
+      function fmtDate(d) {
+        if (!d) return "";
+        const dt = new Date(d + "T00:00:00");
+        if (isNaN(dt)) return esc(d);
+        try {
+          return dt.toLocaleDateString("sw-TZ", {
+            day: "numeric",
+            month: "long",
+            year: "numeric",
+          });
+        } catch (e) {
+          return dt.toDateString();
+        }
+      }
+
+      /* Generic filter UI */
+      function chipsUI(el, labels, onChange, allLabel = "Zote") {
+        const all = [allLabel, ...labels];
+        let cur = "";
+        const draw = () => {
+          el.innerHTML = all
+            .map(
+              (l, i) =>
+                `<button type="button" class="chip" aria-pressed="${(i === 0 && !cur) || l === cur}" data-v="${i === 0 ? "" : esc(l)}">${esc(l)}</button>`,
+            )
+            .join("");
+        };
+        draw();
+        el.addEventListener("click", (e) => {
+          const b = e.target.closest(".chip");
+          if (!b) return;
+          cur = b.dataset.v;
+          draw();
+          onChange(cur);
+        });
+        return () => cur;
+      }
+      function searchUI(input, clearBtn, onChange) {
+        input.addEventListener("input", () => {
+          clearBtn.hidden = !input.value;
+          onChange();
+        });
+        clearBtn.addEventListener("click", () => {
+          input.value = "";
+          clearBtn.hidden = true;
+          input.focus();
+          onChange();
+        });
+      }
+      const emptyBox = (msg) =>
+        `<div class="empty" style="grid-column:1/-1">${msg}</div>`;
+
+      /* ===================== KUHUSU / UONGOZI ===================== */
+      function renderAbout() {
+        $("#aboutGrid").innerHTML = ABOUT.map(
+          (a) =>
+            `<article class="card"><h3>${esc(a.title)}</h3><p>${esc(a.text)}</p></article>`,
+        ).join("");
+        $("#valuesGrid").innerHTML = VALUES.map(
+          (a) =>
+            `<article class="card"><h3>${esc(a.title)}</h3><p>${esc(a.text)}</p></article>`,
+        ).join("");
+        if (LEADERSHIP.length) {
+          $("#uongozi").hidden = false;
+          $("#navLeadership").hidden = false;
+          $("#leadGrid").innerHTML = LEADERSHIP.map(
+            (p) =>
+              `<article class="card" style="text-align:center">${p.photo ? `<img class="cardimg" style="aspect-ratio:1/1" src="${esc(p.photo)}" alt="${esc(p.name)}" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'ph',textContent:'Picha haipatikani'}))">` : ""}<h3>${esc(p.name)}</h3><p>${esc(p.role)}</p></article>`,
+          ).join("");
+        }
+      }
+
+      /* ===================== MATANGAZO ===================== */
+      function imgHtml(src, alt) {
+        return src
+          ? `<img class="cardimg" src="${esc(src)}" alt="${esc(alt)}" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'ph cardimg',textContent:'Picha haipatikani'}))">`
+          : "";
+      }
+      const regAnn = () =>
+        ANNOUNCEMENTS.forEach((a) => {
+          REG["a-" + a.id] = {
+            type: "Tangazo",
+            title: a.title,
+            text: `${a.category} — ${fmtDate(a.date)}\n${a.description}${isUrl(a.link) ? "\n" + a.link : ""}`,
+          };
+        });
+      function renderAnnouncements() {
+        const q = norm($("#annSearch").value),
+          cat = $("#annCat").value;
+        const list = ANNOUNCEMENTS.filter(
+          (a) =>
+            (!cat || a.category === cat) &&
+            (!q ||
+              norm([a.title, a.description, a.category].join(" ")).includes(q)),
+        ).sort((x, y) => String(y.date).localeCompare(String(x.date)));
+        const g = $("#annGrid");
+        if (!ANNOUNCEMENTS.length) {
+          g.innerHTML = emptyBox(
+            "Hakuna matangazo kwa sasa. Matangazo halisi yataonekana hapa yakiwekwa na uongozi.",
+          );
+          return;
+        }
+        if (!list.length) {
+          g.innerHTML = emptyBox(
+            "Hakuna tangazo linalolingana na utafutaji wako.",
+          );
+          return;
+        }
+        g.innerHTML = list
+          .map(
+            (
+              a,
+            ) => `<article class="card" id="ann-${esc(a.id)}">${imgHtml(a.image, a.title)}<span class="tag">${esc(a.category)}</span><h3>${esc(a.title)}</h3><div class="meta"><span>${fmtDate(a.date)}</span></div><p>${esc((a.description || "").slice(0, 180))}${(a.description || "").length > 180 ? "…" : ""}</p>
+    <div class="actions"><button class="btn btn-green btn-sm" type="button" data-ann="${esc(a.id)}">Maelezo zaidi</button></div>${actions("a-" + a.id, { noFav: true })}</article>`,
+          )
+          .join("");
+      }
+      function initAnnouncements() {
+        const cats = [
+          ...new Set(ANNOUNCEMENTS.map((a) => a.category).filter(Boolean)),
+        ];
+        $("#annCat").innerHTML =
+          '<option value="">Aina zote</option>' +
+          cats.map((c) => `<option>${esc(c)}</option>`).join("");
+        searchUI($("#annSearch"), $("#annClear"), renderAnnouncements);
+        $("#annCat").addEventListener("change", renderAnnouncements);
+        $("#annGrid").addEventListener("click", (e) => {
+          const b = e.target.closest("[data-ann]");
+          if (!b) return;
+          const a = ANNOUNCEMENTS.find((x) => x.id === b.dataset.ann);
+          if (!a) return;
+          openOverlay(
+            `<h3>${esc(a.title)}</h3><div class="meta"><span class="tag">${esc(a.category)}</span><span>${fmtDate(a.date)}</span></div>${imgHtml(a.image, a.title)}<p>${esc(a.description).replace(/\n/g, "<br>")}</p>${isUrl(a.link) ? `<a class="btn btn-green btn-sm" href="${esc(a.link)}" target="_blank" rel="noopener noreferrer">${esc(a.linkLabel || "Maelezo zaidi")}</a>` : ""}${actions("a-" + a.id, { noFav: true })}`,
+          );
+        });
+        renderAnnouncements();
+      }
+
+      /* ===================== MATUKIO ===================== */
+      const regEv = () =>
+        EVENTS.forEach((v) => {
+          REG["e-" + v.id] = {
+            type: "Tukio",
+            title: v.title,
+            text: `${fmtDate(v.date)}${v.time ? ", " + v.time : ""}\nMahali: ${v.location || "—"}\n${v.description || ""}`,
+          };
+        });
+      function renderEvents(cat) {
+        const g = $("#evGrid");
+        if (!EVENTS.length) {
+          g.innerHTML = emptyBox(
+            "Hakuna matukio yaliyopangwa kwa sasa. Matukio halisi yataonekana hapa yakiwekwa na uongozi.",
+          );
+          return;
+        }
+        const list = EVENTS.filter((v) => !cat || v.category === cat).sort(
+          (a, b) => String(a.date).localeCompare(String(b.date)),
+        );
+        if (!list.length) {
+          g.innerHTML = emptyBox("Hakuna tukio katika aina hii.");
+          return;
+        }
+        g.innerHTML = list
+          .map(
+            (v) =>
+              `<article class="card">${imgHtml(v.image, v.title)}<span class="tag">${esc(v.category)}</span><h3>${esc(v.title)}</h3><div class="meta"><span>${fmtDate(v.date)}${v.time ? " • " + esc(v.time) : ""}</span><span>${esc(v.location || "")}</span></div><p>${esc(v.description || "")}</p>${actions("e-" + v.id, { noFav: true })}</article>`,
+          )
+          .join("");
+      }
+      function initEvents() {
+        const cats = [
+          ...new Set([...EVENT_CATEGORIES, ...EVENTS.map((e) => e.category)]),
+        ];
+        chipsUI($("#evChips"), cats, renderEvents);
+        renderEvents("");
+      }
+
+      /* ===================== MWANZO: muhtasari ===================== */
+      function renderHome() {
+        const ann = [...ANNOUNCEMENTS]
+          .sort((a, b) => String(b.date).localeCompare(String(a.date)))
+          .slice(0, 3);
+        $("#homeAnnouncements").innerHTML = ann.length
+          ? ann
+              .map(
+                (a) =>
+                  `<p><strong>${esc(a.title)}</strong><br><span class="hint">${fmtDate(a.date)}</span></p>`,
+              )
+              .join("")
+          : '<p class="hint">Hakuna matangazo kwa sasa.</p>';
+        const today = new Date().toISOString().slice(0, 10);
+        const ev = EVENTS.filter((e) => String(e.date) >= today)
+          .sort((a, b) => String(a.date).localeCompare(String(b.date)))
+          .slice(0, 3);
+        $("#homeEvents").innerHTML = ev.length
+          ? ev
+              .map(
+                (e) =>
+                  `<p><strong>${esc(e.title)}</strong><br><span class="hint">${fmtDate(e.date)}${e.time ? " • " + esc(e.time) : ""}</span></p>`,
+              )
+              .join("")
+          : '<p class="hint">Hakuna matukio yajayo yaliyotangazwa kwa sasa.</p>';
+        const doy = Math.floor(
+          (new Date() - new Date(new Date().getFullYear(), 0, 0)) / 864e5,
+        );
+        const r = REMINDERS[doy % REMINDERS.length];
+        $("#homeReminder").innerHTML = r
+          ? `<p style="font-size:1.1rem">${esc(r.text)}</p><p class="hint">${esc(r.ref)}</p>${actions("r-" + r.id + "-home", { noFav: true })}`
+          : "";
+        if (r)
+          REG["r-" + r.id + "-home"] = {
+            type: "Kikumbusho",
+            title: "Kikumbusho — " + r.topic,
+            text: r.text + "\n" + r.ref,
+          };
+        const v = QURAN[doy % QURAN.length];
+        $("#verseOfDay").innerHTML =
+          `<div class="arabic-block" lang="ar">${esc(v.ar)}</div><p>${esc(v.sw)}</p><div class="ref">Qur'an, Surat ${esc(v.surah)} (${v.num}):${esc(v.ayah)}</div>${actions("q-" + v.id + "-day", { noFav: true })}`;
+        REG["q-" + v.id + "-day"] = {
+          type: "Qur'an",
+          title: `Qur'an ${v.surah} (${v.num}):${v.ayah}`,
+          text: `${v.ar}\n\n${v.sw}`,
+        };
+      }
+
+      /* ===================== MAKTABA ===================== */
+      const regLib = () => {
+        QURAN.forEach(
+          (v) =>
+            (REG["q-" + v.id] = {
+              type: "Qur'an",
+              title: `Qur'an — Sura ${v.surah} (${v.num}):${v.ayah}`,
+              text: `${v.ar}\n\n${v.sw}\n\n(Qur'an ${v.num}:${v.ayah})`,
+            }),
+        );
+        HADITH.forEach(
+          (h) =>
+            (REG["h-" + h.id] = {
+              type: "Hadith",
+              title: `Hadith — ${h.topic}`,
+              text: `${h.ar}\n\n${h.sw}\n\nRejea: ${h.source}`,
+            }),
+        );
+        DUAS.forEach(
+          (d) =>
+            (REG["d-" + d.id] = {
+              type: "Dua",
+              title: `Dua — ${d.title}`,
+              text: `${d.ar}\n\n${d.tr}\n\n${d.sw}\n\nRejea: ${d.source}`,
+            }),
+        );
+        REMINDERS.forEach(
+          (r) =>
+            (REG["r-" + r.id] = {
+              type: "Kikumbusho",
+              title: `Kikumbusho — ${r.topic}`,
+              text: `${r.text}\n${r.ref}`,
+            }),
+        );
+      };
+
+      function quranCard(v) {
+        return `<article class="card"><span class="tag">Sura ${esc(v.surah)} (${v.num}:${esc(v.ayah)})</span><div class="arabic-block" lang="ar">${esc(v.ar)}</div><p>${esc(v.sw)}</p><div class="ref">${esc(QURAN_SOURCE)}</div>${actions("q-" + v.id)}</article>`;
+      }
+      function hadithCard(h) {
+        return `<article class="card"><span class="tag">${esc(h.topic)}</span>${h.ar ? `<div class="arabic-block" lang="ar">${esc(h.ar)}</div>` : ""}<p>${esc(h.sw)}</p><div class="ref"><strong>Rejea:</strong> ${esc(h.source)}<br><strong>Daraja:</strong> ${esc(h.grade || "Haijabainishwa")}</div>${actions("h-" + h.id)}</article>`;
+      }
+      function duaCard(d) {
+        return `<article class="card"><span class="tag">${esc(d.cat)}</span><h3>${esc(d.title)}</h3><div class="arabic-block" lang="ar">${esc(d.ar)}</div><p class="translit">${esc(d.tr)}</p><p>${esc(d.sw)}</p><div class="ref">Rejea: ${esc(d.source)}</div>${actions("d-" + d.id)}</article>`;
+      }
+      function remCard(r) {
+        return `<article class="card"><span class="tag">${esc(r.topic)}</span><p style="font-size:1.05rem">${esc(r.text)}</p><div class="ref">${esc(r.ref)}</div>${actions("r-" + r.id)}</article>`;
+      }
+      function renderFavs() {
+        const g = $("#favGrid");
+        if (!g) return;
+        const f = getFavs().filter((id) => REG[id]);
+        g.innerHTML = f.length
+          ? f
+              .map((id) => {
+                const it = REG[id];
+                return `<article class="card"><span class="tag">${esc(it.type)}</span><h3>${esc(it.title)}</h3><p style="white-space:pre-line">${esc(it.text)}</p>${actions(id, { noFav: true }).replace("</div>", `<button class="btn btn-outline btn-sm" type="button" data-act="remove-fav" data-id="${esc(id)}">Ondoa</button></div>`)}</article>`;
+              })
+              .join("")
+          : emptyBox(
+              "Bado hujahifadhi kitu. Bonyeza “☆ Hifadhi” kwenye Qur'an, Hadith, Dua au kikumbusho.",
+            );
+      }
+      function setupList({
+        input,
+        clear,
+        chipsEl,
+        labels,
+        gridEl,
+        items,
+        catKey,
+        fields,
+        card,
+        emptyMsg,
+      }) {
+        let getCat = () => "";
+        const draw = () => {
+          const q = norm(input.value),
+            c = getCat();
+          const list = items.filter(
+            (i) =>
+              (!c || i[catKey] === c) && (!q || norm(fields(i)).includes(q)),
+          );
+          gridEl.innerHTML = list.length
+            ? list.map(card).join("")
+            : emptyBox(items.length ? emptyMsg : "Hakuna maudhui kwa sasa.");
+        };
+        if (chipsEl) getCat = chipsUI(chipsEl, labels, draw);
+        searchUI(input, clear, draw);
+        draw();
+      }
+      function initLibrary() {
+        setupList({
+          input: $("#qSearch"),
+          clear: $("#qClear"),
+          gridEl: $("#qGrid"),
+          items: QURAN,
+          catKey: "surah",
+          fields: (v) => [v.surah, v.sw, v.num, v.ayah, v.ar].join(" "),
+          card: quranCard,
+          emptyMsg: "Hakuna aya inayolingana na utafutaji wako.",
+        });
+        setupList({
+          input: $("#hSearch"),
+          clear: $("#hClear"),
+          chipsEl: $("#hChips"),
+          labels: HADITH_TOPICS,
+          gridEl: $("#hGrid"),
+          items: HADITH,
+          catKey: "topic",
+          fields: (h) => [h.topic, h.sw, h.source, h.ar].join(" "),
+          card: hadithCard,
+          emptyMsg: "Hakuna Hadith inayolingana.",
+        });
+        setupList({
+          input: $("#dSearch"),
+          clear: $("#dClear"),
+          chipsEl: $("#dChips"),
+          labels: DUA_CATS,
+          gridEl: $("#dGrid"),
+          items: DUAS,
+          catKey: "cat",
+          fields: (d) => [d.title, d.cat, d.tr, d.sw, d.ar].join(" "),
+          card: duaCard,
+          emptyMsg: "Hakuna Dua inayolingana.",
+        });
+        setupList({
+          input: $("#rSearch"),
+          clear: $("#rClear"),
+          chipsEl: $("#rChips"),
+          labels: REMINDER_TOPICS,
+          gridEl: $("#rGrid"),
+          items: REMINDERS,
+          catKey: "topic",
+          fields: (r) => [r.topic, r.text, r.ref].join(" "),
+          card: remCard,
+          emptyMsg: "Hakuna kikumbusho kinacholingana.",
+        });
+        renderFavs();
+        $$(".tab").forEach((t, i, all) => {
+          t.addEventListener("click", () => openTab(t.dataset.tab));
+          t.addEventListener("keydown", (e) => {
+            let n = null;
+            if (e.key === "ArrowRight") n = all[(i + 1) % all.length];
+            if (e.key === "ArrowLeft")
+              n = all[(i - 1 + all.length) % all.length];
+            if (n) {
+              e.preventDefault();
+              n.focus();
+              openTab(n.dataset.tab);
+            }
+          });
+        });
+      }
+      function openTab(name) {
+        $$(".tab").forEach((t) =>
+          t.setAttribute("aria-selected", t.dataset.tab === name),
+        );
+        $$(".panel").forEach((p) => (p.hidden = p.id !== "panel-" + name));
+      }
+
+      /* ===================== MASWALI / PICHA ===================== */
+      function renderQA() {
+        $("#qaList").innerHTML = REVIEWED_QA.length
+          ? REVIEWED_QA.map(
+              (x) =>
+                `<article class="card flat" style="margin-bottom:1rem"><h3>${esc(x.q)}</h3><p>${esc(x.a)}</p><div class="ref">${x.reviewer ? "Imepitiwa na: " + esc(x.reviewer) + ". " : ""}${x.source ? "Rejea: " + esc(x.source) : ""}</div></article>`,
+            ).join("")
+          : '<div class="empty" style="margin-bottom:1.2rem">Hakuna majibu yaliyopitiwa kwa sasa. Maswali yote yanayotumwa hupitiwa kabla ya kuchapishwa.</div>';
+      }
+      let galIdx = 0;
+      function renderGallery() {
+        const g = $("#galGrid");
+        if (!GALLERY.length) {
+          g.innerHTML =
+            '<div class="empty" style="grid-column:1/-1;margin-bottom:1rem">Hakuna picha kwa sasa. Picha halisi za shughuli za TRACDI MSA zitaonekana hapa zikiwekwa na uongozi.</div>' +
+            [1, 2, 3]
+              .map(
+                () =>
+                  '<figure><div class="ph">Nafasi ya picha (mfano wa mpangilio, si picha halisi)</div></figure>',
+              )
+              .join("");
+          return;
+        }
+        g.innerHTML = GALLERY.map(
+          (p, i) =>
+            `<figure><button class="thumb" type="button" data-gi="${i}" aria-label="Fungua picha: ${esc(p.caption || p.alt)}"><img src="${esc(p.src)}" alt="${esc(p.alt)}" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'ph',textContent:'Picha haipatikani'}))"></button><figcaption><strong>${esc(p.caption || "")}</strong></figcaption></figure>`,
+        ).join("");
+        g.addEventListener("click", (e) => {
+          const b = e.target.closest("[data-gi]");
+          if (b) {
+            galIdx = +b.dataset.gi;
+            showLightbox();
+          }
+        });
+      }
+      function showLightbox() {
+        const p = GALLERY[galIdx];
+        if (!p) return;
+        openOverlay(
+          `<h3>${esc(p.caption || "Picha")}</h3><img src="${esc(p.src)}" alt="${esc(p.alt)}" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'ph',textContent:'Picha haipatikani'}))"><p style="margin-top:.6rem">${esc(p.description || "")}</p><div class="ov-nav"><button class="btn btn-outline btn-sm" type="button" id="lbPrev">← Iliyotangulia</button><span class="hint">${galIdx + 1} / ${GALLERY.length}</span><button class="btn btn-outline btn-sm" type="button" id="lbNext">Inayofuata →</button></div>`,
+          true,
+        );
+        $("#lbPrev").onclick = () => {
+          galIdx = (galIdx - 1 + GALLERY.length) % GALLERY.length;
+          showLightbox();
+        };
+        $("#lbNext").onclick = () => {
+          galIdx = (galIdx + 1) % GALLERY.length;
+          showLightbox();
+        };
+      }
+
+      /* ===================== OVERLAY ===================== */
+      let lastFocus = null;
+      function openOverlay(html, keep) {
+        const ov = $("#overlay");
+        if (!ov.classList.contains("open")) lastFocus = document.activeElement;
+        $("#ovBox").innerHTML =
+          `<button class="ov-close" type="button" aria-label="Funga" id="ovClose">×</button>` +
+          html;
+        ov.classList.add("open");
+        document.body.style.overflow = "hidden";
+        $("#ovClose").onclick = closeOverlay;
+        $("#ovClose").focus();
+      }
+      function closeOverlay() {
+        $("#overlay").classList.remove("open");
+        document.body.style.overflow = "";
+        if (lastFocus && lastFocus.focus) lastFocus.focus();
+      }
+      $("#overlay").addEventListener("click", (e) => {
+        if (e.target.id === "overlay") closeOverlay();
+      });
+      document.addEventListener("keydown", (e) => {
+        const ov = $("#overlay");
+        if (e.key === "Escape") {
+          if (ov.classList.contains("open")) closeOverlay();
+          closeMenus();
+        }
+        if (ov.classList.contains("open")) {
+          if (e.key === "ArrowRight" && $("#lbNext")) $("#lbNext").click();
+          if (e.key === "ArrowLeft" && $("#lbPrev")) $("#lbPrev").click();
+          if (e.key === "Tab") {
+            const f = $$("button,a[href]", ov).filter((x) => !x.disabled);
+            if (!f.length) return;
+            const a = f[0],
+              z = f[f.length - 1];
+            if (e.shiftKey && document.activeElement === a) {
+              e.preventDefault();
+              z.focus();
+            } else if (!e.shiftKey && document.activeElement === z) {
+              e.preventDefault();
+              a.focus();
+            }
+          }
+        }
+      });
+
+      /* ===================== NAVIGATION ===================== */
+      const nav = $("#mainNav"),
+        toggle = $("#menuToggle");
+      function closeMenus() {
+        nav.classList.remove("open");
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.setAttribute("aria-label", "Fungua menyu");
+        $$(".dd").forEach((d) => {
+          d.classList.remove("open");
+          $(".dd-btn", d).setAttribute("aria-expanded", "false");
+        });
+      }
+      toggle.addEventListener("click", () => {
+        const o = !nav.classList.contains("open");
+        closeMenus();
+        if (o) {
+          nav.classList.add("open");
+          toggle.setAttribute("aria-expanded", "true");
+          toggle.setAttribute("aria-label", "Funga menyu");
+        }
+      });
+      $$(".dd-btn").forEach((b) =>
+        b.addEventListener("click", (e) => {
+          e.stopPropagation();
+          const d = b.parentElement,
+            o = !d.classList.contains("open");
+          $$(".dd").forEach((x) => {
+            x.classList.remove("open");
+            $(".dd-btn", x).setAttribute("aria-expanded", "false");
+          });
+          if (o) {
+            d.classList.add("open");
+            b.setAttribute("aria-expanded", "true");
+          }
+        }),
+      );
+      document.addEventListener("click", (e) => {
+        if (!e.target.closest("nav.main") && !e.target.closest("#menuToggle"))
+          closeMenus();
+      });
+      document.addEventListener("click", (e) => {
+        const a = e.target.closest("a[href^='#']");
+        if (!a) return;
+        if (a.dataset.tab) openTab(a.dataset.tab);
+        if (a.dataset.topic) {
+          const s = $("#cTopic");
+          if (s) s.value = a.dataset.topic;
+        }
+        if (a.closest("nav.main") || a.closest(".dd-menu")) closeMenus();
+        const t = $(a.getAttribute("href"));
+        if (t && t.hidden) e.preventDefault();
+      });
+      window.addEventListener("resize", () => {
+        if (innerWidth >= 960) closeMenus();
+      });
+      const toTop = $("#toTop");
+      window.addEventListener(
+        "scroll",
+        () => toTop.classList.toggle("show", scrollY > 500),
+        { passive: true },
+      );
+      toTop.addEventListener("click", () =>
+        scrollTo({
+          top: 0,
+          behavior: matchMedia("(prefers-reduced-motion: reduce)").matches
+            ? "auto"
+            : "smooth",
+        }),
+      );
+
+      /* ===================== UTAFUTAJI WA TOVUTI ===================== */
+      function siteIndex() {
+        const out = [];
+        ANNOUNCEMENTS.forEach((a) =>
+          out.push({
+            t: "Tangazo",
+            title: a.title,
+            body: a.description,
+            href: "#matangazo",
+          }),
+        );
+        EVENTS.forEach((a) =>
+          out.push({
+            t: "Tukio",
+            title: a.title,
+            body: [a.description, a.location, a.category].join(" "),
+            href: "#matukio",
+          }),
+        );
+        REMINDERS.forEach((a) =>
+          out.push({
+            t: "Kikumbusho",
+            title: a.topic,
+            body: a.text,
+            href: "#maktaba",
+            tab: "vikumbusho",
+          }),
+        );
+        QURAN.forEach((a) =>
+          out.push({
+            t: "Qur'an",
+            title: `Sura ${a.surah} (${a.num}:${a.ayah})`,
+            body: a.sw + " " + a.ar,
+            href: "#maktaba",
+            tab: "quran",
+          }),
+        );
+        HADITH.forEach((a) =>
+          out.push({
+            t: "Hadith",
+            title: a.topic,
+            body: a.sw + " " + a.source,
+            href: "#maktaba",
+            tab: "hadith",
+          }),
+        );
+        DUAS.forEach((a) =>
+          out.push({
+            t: "Dua",
+            title: a.title,
+            body: a.sw + " " + a.tr,
+            href: "#maktaba",
+            tab: "dua",
+          }),
+        );
+        ABOUT.forEach((a) =>
+          out.push({
+            t: "Kuhusu",
+            title: a.title,
+            body: a.text,
+            href: "#kuhusu",
+          }),
+        );
+        return out;
+      }
+      function runSiteSearch() {
+        const q = norm($("#siteSearch").value.trim()),
+          box = $("#siteResults");
+        $("#siteSearchClear").hidden = !$("#siteSearch").value;
+        if (!q) {
+          box.innerHTML = "";
+          return;
+        }
+        const r = siteIndex()
+          .filter((i) => norm(i.title + " " + i.body).includes(q))
+          .slice(0, 25);
+        box.innerHTML = r.length
+          ? `<p class="hint">Matokeo: ${r.length}</p>` +
+            r
+              .map(
+                (i) =>
+                  `<a class="res" href="${i.href}" ${i.tab ? `data-tab="${i.tab}"` : ""}><strong>${esc(i.title)}</strong> <small>(${esc(i.t)})</small><br><small>${esc(String(i.body).slice(0, 110))}…</small></a>`,
+              )
+              .join("")
+          : '<div class="empty">Hakuna matokeo. Jaribu neno lingine.</div>';
+      }
+      $("#siteSearch").addEventListener("input", runSiteSearch);
+      $("#siteSearchClear").addEventListener("click", () => {
+        $("#siteSearch").value = "";
+        runSiteSearch();
+        $("#siteSearch").focus();
+      });
+
+      /* ===================== NYAKATI ZA SWALA ===================== */
+      const PRAYERS = [
+        ["Fajr", "Fajr"],
+        ["Dhuhr", "Dhuhr"],
+        ["Asr", "Asr"],
+        ["Maghrib", "Maghrib"],
+        ["Isha", "Isha"],
+      ];
+      let prayerData = null;
+      function nowInTz() {
+        const tz = CONFIG.prayer.timezone;
+        try {
+          return new Date(new Date().toLocaleString("en-US", { timeZone: tz }));
+        } catch (e) {
+          return new Date();
+        }
+      }
+      function tickClock() {
+        const tz = CONFIG.prayer.timezone;
+        try {
+          $("#clock").textContent = new Date().toLocaleTimeString("sw-TZ", {
+            timeZone: tz,
+            hour: "2-digit",
+            minute: "2-digit",
+            second: "2-digit",
+          });
+          $("#todayDate").textContent =
+            new Date().toLocaleDateString("sw-TZ", {
+              timeZone: tz,
+              weekday: "long",
+              day: "numeric",
+              month: "long",
+              year: "numeric",
+            }) + " • Dodoma";
+        } catch (e) {
+          $("#clock").textContent = new Date().toLocaleTimeString();
+        }
+        if (prayerData) markNext();
+      }
+      function markNext() {
+        const n = nowInTz(),
+          m = n.getHours() * 60 + n.getMinutes();
+        let next = -1;
+        PRAYERS.forEach(([k], i) => {
+          const t = prayerData[k];
+          if (!t) return;
+          const [h, mm] = t.split(":").map(Number);
+          if (next < 0 && h * 60 + mm > m) next = i;
+        });
+        $$("#prayerGrid .pt").forEach((el, i) =>
+          el.classList.toggle("next", i === next),
+        );
+      }
+      async function loadPrayer() {
+        const st = $("#prayerStatus"),
+          grid = $("#prayerGrid"),
+          P = CONFIG.prayer;
+        $("#methodName").textContent = P.methodName;
+        st.className = "status load";
+        st.textContent = "Inapakia nyakati za Swala…";
+        grid.hidden = true;
+        $("#retryPrayer").hidden = true;
+        const ctl = new AbortController(),
+          to = setTimeout(() => ctl.abort(), 12000);
+        try {
+          const res = await fetch(
+            `https://api.aladhan.com/v1/timingsByCity?city=${encodeURIComponent(P.city)}&country=${encodeURIComponent(P.country)}&method=${encodeURIComponent(P.method)}`,
+            { signal: ctl.signal },
+          );
+          if (!res.ok) throw new Error("HTTP " + res.status);
+          const j = await res.json();
+          if (!j || !j.data || !j.data.timings)
+            throw new Error("Muundo usiotarajiwa");
+          prayerData = j.data.timings;
+          grid.innerHTML = PRAYERS.map(
+            ([k]) =>
+              `<div class="pt"><span>${k}</span><b>${esc(String(prayerData[k]).slice(0, 5))}</b></div>`,
+          ).join("");
+          grid.hidden = false;
+          st.className = "status ok";
+          st.textContent =
+            "Nyakati za leo, Dodoma, Tanzania (chanzo: Aladhan).";
+          markNext();
+          const h = j.data.date && j.data.date.hijri;
+          if (h)
+            $("#hijriNow").textContent = `${h.day} ${h.month.en} ${h.year} AH`;
+        } catch (err) {
+          prayerData = null;
+          st.className = "status err";
+          st.innerHTML =
+            "Nyakati za Swala hazikuweza kupatikana (mtandao au huduma haipatikani). Tafadhali wasiliana na msikiti wa eneo lako au tumia ratiba ya Swala unayoiamini.";
+          $("#retryPrayer").hidden = false;
+          if ($("#hijriNow").textContent === "Inapakia…")
+            $("#hijriNow").textContent =
+              "Tarehe ya Hijria haipatikani kwa sasa.";
+        } finally {
+          clearTimeout(to);
+        }
+      }
+      $("#retryPrayer").addEventListener("click", loadPrayer);
+
+      /* ===================== KALENDA ===================== */
+      function renderCalendar() {
+        $("#obsGrid").innerHTML = OBSERVANCES.map(
+          (o) =>
+            `<article class="card flat"><h3>${esc(o.title)}</h3><p><strong>${esc(o.hijri)}</strong></p><p class="hint">${esc(o.note)} Tarehe ya Gregori hutegemea kuonekana kwa mwezi.</p></article>`,
+        ).join("");
+        $("#confirmedDates").innerHTML = CONFIRMED_DATES.length
+          ? '<div class="grid g3">' +
+            CONFIRMED_DATES.map(
+              (d) =>
+                `<article class="card flat"><h3>${esc(d.title)}</h3><p><strong>${fmtDate(d.date)}</strong></p><p class="hint">${esc(d.note || "")}</p></article>`,
+            ).join("") +
+            "</div>"
+          : '<div class="empty">Hakuna tarehe zilizothibitishwa zinazopatikana kwa sasa. Tafadhali subiri tangazo rasmi la viongozi wa dini wa eneo lako.</div>';
+      }
+
+      /* ===================== MAWASILIANO ===================== */
+      function renderContacts() {
+        const parts = [];
+        if (isUrl(CONFIG.whatsappGroupLink))
+          parts.push(
+            `<a class="btn btn-gold" href="${esc(CONFIG.whatsappGroupLink)}" target="_blank" rel="noopener noreferrer">Jiunge na Kikundi cha WhatsApp</a>`,
+          );
+        if (/^\d{9,15}$/.test(CONFIG.whatsappNumber))
+          parts.push(
+            `<a class="btn btn-green" href="https://wa.me/${CONFIG.whatsappNumber}" target="_blank" rel="noopener noreferrer">Ongea nasi WhatsApp</a>`,
+          );
+        $("#waContact").innerHTML = parts.length
+          ? `<div class="actions">${parts.join("")}</div>`
+          : '<p class="hint">Kiungo cha WhatsApp bado hakijawekwa. Mmiliki: weka <code>whatsappGroupLink</code> na <code>whatsappNumber</code> kwenye <code>CONFIG</code> ndani ya <code>index.html</code>.</p>';
+        const wa = isUrl(CONFIG.whatsappGroupLink)
+          ? CONFIG.whatsappGroupLink
+          : /^\d{9,15}$/.test(CONFIG.whatsappNumber)
+            ? "https://wa.me/" + CONFIG.whatsappNumber
+            : "";
+        if (wa) {
+          const h = $("#headWa");
+          h.href = wa;
+          h.classList.add("show");
+        }
+        const f = [];
+        if (wa)
+          f.push(
+            `<p><a href="${esc(wa)}" target="_blank" rel="noopener noreferrer">WhatsApp</a></p>`,
+          );
+        if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(CONFIG.contactEmail))
+          f.push(
+            `<p><a href="mailto:${esc(CONFIG.contactEmail)}">${esc(CONFIG.contactEmail)}</a></p>`,
+          );
+        $("#footContact").innerHTML = f.length
+          ? f.join("")
+          : '<p class="hint" style="color:#b9d3c6">Mawasiliano bado hayajawekwa.</p>';
+      }
+      function sbConfigured() {
+        const s = CONFIG.supabase;
+        return (
+          isUrl(s.url) &&
+          typeof s.anonKey === "string" &&
+          s.anonKey.length > 20 &&
+          /^[a-z_][a-z0-9_]*$/i.test(s.table)
+        );
+      }
+      function initForm() {
+        const form = $("#contactForm"),
+          msg = $("#cMsg"),
+          note = $("#formConfigNote");
+        if (!sbConfigured()) {
+          note.hidden = false;
+          note.textContent =
+            "Fomu hii bado haijaunganishwa na hifadhidata (Supabase). Ujumbe hautatumwa hadi mmiliki akamilishe mipangilio. Kwa sasa tumia WhatsApp ikiwa imewekwa.";
+        }
+        msg.addEventListener("input", () => {
+          $("#cCount").textContent = msg.value.length;
+        });
+        form.addEventListener("submit", async (e) => {
+          e.preventDefault();
+          const res = $("#formResult");
+          res.innerHTML = "";
+          ["cMsgErr", "cContactErr", "cConsentErr"].forEach(
+            (i) => ($("#" + i).textContent = ""),
+          );
+          if ($("#cWeb").value) return; // honeypot
+          const name = $("#cName").value.trim(),
+            topic = $("#cTopic").value,
+            message = msg.value.trim(),
+            contact = $("#cContact").value.trim();
+          let ok = true;
+          if (message.length < 10) {
+            $("#cMsgErr").textContent = "Andika angalau herufi 10.";
+            ok = false;
+          }
+          if (message.length > 1000) {
+            $("#cMsgErr").textContent = "Ujumbe usizidi herufi 1000.";
+            ok = false;
+          }
+          if (
+            contact &&
+            !(
+              /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(contact) ||
+              /^\+?[\d\s-]{9,15}$/.test(contact)
+            )
+          ) {
+            $("#cContactErr").textContent =
+              "Weka barua pepe au namba ya simu sahihi, au acha wazi.";
+            ok = false;
+          }
+          if (!$("#cConsent").checked) {
+            $("#cConsentErr").textContent =
+              "Tafadhali kubali masharti ya matumizi ya taarifa.";
+            ok = false;
+          }
+          if (!ok) {
+            const first = $(".error-text:not(:empty)", form);
+            if (first) first.scrollIntoView({ block: "center" });
+            return;
+          }
+          if (!sbConfigured()) {
+            res.innerHTML =
+              '<div class="status err">Ujumbe haujatumwa: fomu bado haijaunganishwa na hifadhidata. Mmiliki anahitaji kuweka mipangilio ya Supabase.</div>';
+            return;
+          }
+          const btn = $("#cSubmit");
+          btn.disabled = true;
+          btn.textContent = "Inatuma…";
+          const ctl = new AbortController(),
+            to = setTimeout(() => ctl.abort(), 15000);
+          try {
+            const S = CONFIG.supabase;
+            const r = await fetch(
+              `${S.url.replace(/\/+$/, "")}/rest/v1/${S.table}`,
+              {
+                method: "POST",
+                signal: ctl.signal,
+                headers: {
+                  "Content-Type": "application/json",
+                  apikey: S.anonKey,
+                  Authorization: "Bearer " + S.anonKey,
+                  Prefer: "return=minimal",
+                },
+                body: JSON.stringify({
+                  name: name || null,
+                  topic: topic.slice(0, 60),
+                  message,
+                  contact: contact || null,
+                }),
+              },
+            );
+            if (!r.ok) throw new Error("HTTP " + r.status);
+            res.innerHTML =
+              '<div class="status ok">Asante! Ujumbe wako umetumwa. Utapitiwa na uongozi.</div>';
+            form.reset();
+            $("#cCount").textContent = "0";
+          } catch (err) {
+            res.innerHTML =
+              '<div class="status err">Ujumbe haukutumwa. Hakikisha una mtandao na ujaribu tena. Ikiendelea, mmiliki akague mipangilio ya Supabase na sera za RLS.</div>';
+          } finally {
+            clearTimeout(to);
+            btn.disabled = false;
+            btn.textContent = "Tuma Ujumbe";
+          }
+        });
+      }
+
+      /* ===================== ANZA ===================== */
+      /* Pakia maudhui yaliyochapishwa kutoka Supabase (yanaongezwa juu ya maudhui ya ndani ya faili hili) */
+      async function loadRemote() {
+        if (!sbConfigured()) return;
+        const S = CONFIG.supabase,
+          base = S.url.replace(/\/+$/, "") + "/rest/v1/";
+        const T = [
+          "announcements",
+          "events",
+          "gallery",
+          "quran",
+          "hadith",
+          "duas",
+          "reminders",
+          "qa",
+          "leadership",
+          "calendar_dates",
+        ];
+        const get = async (t) => {
+          const c = new AbortController(),
+            to = setTimeout(() => c.abort(), 10000);
+          try {
+            const r = await fetch(
+              base + t + "?select=*&published=eq.true&order=created_at.desc",
+              {
+                signal: c.signal,
+                headers: {
+                  apikey: S.anonKey,
+                  Authorization: "Bearer " + S.anonKey,
+                },
+              },
+            );
+            if (!r.ok) throw new Error("HTTP " + r.status);
+            return await r.json();
+          } finally {
+            clearTimeout(to);
+          }
+        };
+        const res = await Promise.allSettled(T.map(get));
+        const d = {};
+        let fail = 0;
+        res.forEach((r, i) => {
+          if (r.status === "fulfilled" && Array.isArray(r.value))
+            d[T[i]] = r.value;
+          else {
+            d[T[i]] = [];
+            fail++;
+          }
+        });
+        const addUniq = (arr, v) => {
+          if (v && !arr.includes(v)) arr.push(v);
+        };
+        d.announcements.forEach((r) =>
+          ANNOUNCEMENTS.push({
+            id: r.id,
+            title: r.title,
+            date: r.post_date || String(r.created_at).slice(0, 10),
+            category: r.category || "Jumla",
+            description: r.description || "",
+            image: r.image_url || "",
+            link: r.link_url || "",
+            linkLabel: r.link_label || "",
+          }),
+        );
+        d.events.forEach((r) => {
+          EVENTS.push({
+            id: r.id,
+            title: r.title,
+            category: r.category,
+            date: r.event_date,
+            time: r.event_time ? String(r.event_time).slice(0, 5) : "",
+            location: r.location || "",
+            description: r.description || "",
+            image: r.image_url || "",
+          });
+          addUniq(EVENT_CATEGORIES, r.category);
+        });
+        d.gallery.forEach((r) =>
+          GALLERY.push({
+            src: r.image_url,
+            alt: r.alt || r.caption || "Picha ya TRACDI MSA",
+            caption: r.caption || "",
+            description: r.description || "",
+          }),
+        );
+        d.quran.forEach((r) =>
+          QURAN.push({
+            id: r.id,
+            surah: r.surah,
+            num: r.surah_number,
+            ayah: String(r.ayah),
+            ar: r.arabic,
+            sw: r.swahili,
+          }),
+        );
+        d.hadith.forEach((r) => {
+          HADITH.push({
+            id: r.id,
+            topic: r.topic,
+            ar: r.arabic || "",
+            sw: r.swahili,
+            source: r.source,
+            grade: r.grade || "",
+          });
+          addUniq(HADITH_TOPICS, r.topic);
+        });
+        d.duas.forEach((r) => {
+          DUAS.push({
+            id: r.id,
+            cat: r.category,
+            title: r.title,
+            ar: r.arabic,
+            tr: r.translit || "",
+            sw: r.swahili,
+            source: r.source || "Haijatajwa",
+          });
+          addUniq(DUA_CATS, r.category);
+        });
+        d.reminders.forEach((r) => {
+          REMINDERS.push({
+            id: r.id,
+            topic: r.topic,
+            text: r.body,
+            ref: r.ref || "Kikumbusho cha jumla",
+          });
+          addUniq(REMINDER_TOPICS, r.topic);
+        });
+        d.qa.forEach((r) =>
+          REVIEWED_QA.push({
+            q: r.question,
+            a: r.answer,
+            reviewer: r.reviewer || "",
+            source: r.source || "",
+          }),
+        );
+        d.leadership
+          .sort((a, b) => (a.sort_order || 0) - (b.sort_order || 0))
+          .forEach((r) =>
+            LEADERSHIP.push({
+              name: r.name,
+              role: r.role,
+              photo: r.photo_url || "",
+            }),
+          );
+        d.calendar_dates.forEach((r) =>
+          CONFIRMED_DATES.push({
+            title: r.title,
+            date: r.event_date,
+            note: r.note || "",
+          }),
+        );
+        if (fail) toast("Baadhi ya maudhui ya mtandaoni hayakupatikana.");
+      }
+      async function init() {
+        $("#year").textContent = new Date().getFullYear();
+        renderContacts();
+        initForm();
+        tickClock();
+        setInterval(tickClock, 1000);
+        loadPrayer();
+        try {
+          await loadRemote();
+        } catch (e) {
+          console.warn("Supabase:", e);
+        }
+        regAnn();
+        regEv();
+        regLib();
+        renderAbout();
+        renderCalendar();
+        renderQA();
+        renderGallery();
+        initAnnouncements();
+        initEvents();
+        initLibrary();
+        renderHome();
+      }
+      init();
+    </script>
+  </body>
+</html>

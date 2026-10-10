@@ -1,0 +1,1370 @@
+<!doctype html>
+<html lang="sw">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Msimamizi — TRACDI MSA</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Lora:wght@600;700&family=Nunito:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --g9: #06382a;
+        --g8: #0a4a37;
+        --g7: #0d6247;
+        --g1: #dff0e8;
+        --gold: #b8892b;
+        --gl: #d9b25a;
+        --cream: #fbf6e9;
+        --line: #e2d8b9;
+        --ink: #1b2a24;
+        --soft: #4a5a52;
+        --red: #9b2c2c;
+        --body: "Nunito", system-ui, sans-serif;
+        --head: "Lora", Georgia, serif;
+        --ar: "Amiri", "Noto Naskh Arabic", serif;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: var(--body);
+        background: var(--cream);
+        color: var(--ink);
+        line-height: 1.55;
+      }
+      h1,
+      h2,
+      h3 {
+        font-family: var(--head);
+        color: var(--g9);
+        margin: 0 0 0.5rem;
+      }
+      .ar {
+        font-family: var(--ar);
+        font-size: 1.3rem;
+        direction: rtl;
+        text-align: right;
+      }
+      :focus-visible {
+        outline: 3px solid var(--gold);
+        outline-offset: 2px;
+      }
+      header {
+        background: linear-gradient(180deg, var(--g9), var(--g8));
+        border-bottom: 3px solid var(--gold);
+        color: #fff;
+        padding: 0.7rem 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 0.6rem;
+        position: sticky;
+        top: 0;
+        z-index: 50;
+      }
+      header b {
+        font-family: var(--head);
+        color: var(--gl);
+        font-size: 1.15rem;
+      }
+      header .r {
+        display: flex;
+        gap: 0.5rem;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      .wrap {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 1rem;
+      }
+      .btn {
+        font: inherit;
+        font-weight: 700;
+        border-radius: 999px;
+        border: 2px solid var(--g7);
+        background: #fff;
+        color: var(--g8);
+        padding: 0.5rem 1rem;
+        cursor: pointer;
+        min-height: 42px;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+      }
+      .btn.p {
+        background: var(--g7);
+        color: #fff;
+      }
+      .btn.g {
+        background: var(--gold);
+        border-color: var(--gold);
+        color: #1a1200;
+      }
+      .btn.d {
+        border-color: var(--red);
+        color: var(--red);
+      }
+      .btn.s {
+        padding: 0.3rem 0.8rem;
+        min-height: 36px;
+        font-size: 0.88rem;
+      }
+      .btn[disabled] {
+        opacity: 0.55;
+        cursor: not-allowed;
+      }
+      header .btn {
+        background: transparent;
+        color: #fff;
+        border-color: var(--gl);
+      }
+      .card {
+        background: #fff;
+        border: 1px solid var(--line);
+        border-left: 5px solid var(--gold);
+        border-radius: 14px;
+        padding: 1rem;
+        margin-bottom: 0.8rem;
+        box-shadow: 0 4px 14px rgba(6, 56, 42, 0.08);
+      }
+      .field {
+        display: flex;
+        flex-direction: column;
+        gap: 0.3rem;
+        margin-bottom: 0.9rem;
+      }
+      label {
+        font-weight: 700;
+        font-size: 0.92rem;
+      }
+      input,
+      select,
+      textarea {
+        font: inherit;
+        width: 100%;
+        border: 2px solid var(--line);
+        border-radius: 12px;
+        padding: 0.65rem 0.8rem;
+        min-height: 44px;
+        background: #fff;
+        color: var(--ink);
+      }
+      input[type="checkbox"] {
+        width: 22px;
+        height: 22px;
+        min-height: 0;
+      }
+      textarea {
+        resize: vertical;
+      }
+      .hint {
+        font-size: 0.84rem;
+        color: var(--soft);
+      }
+      .err {
+        background: #fdecec;
+        color: var(--red);
+        border: 1px solid #f0bcbc;
+        border-radius: 12px;
+        padding: 0.6rem 0.9rem;
+        font-weight: 600;
+        margin: 0.6rem 0;
+      }
+      .ok {
+        background: var(--g1);
+        color: var(--g8);
+        border-radius: 12px;
+        padding: 0.6rem 0.9rem;
+        font-weight: 600;
+        margin: 0.6rem 0;
+      }
+      .warn {
+        background: #fffaf0;
+        border: 2px dashed var(--gold);
+        color: #6b4e0d;
+        border-radius: 12px;
+        padding: 0.6rem 0.9rem;
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+      }
+      .tabs {
+        display: flex;
+        gap: 0.4rem;
+        overflow-x: auto;
+        padding: 0.2rem 0 0.6rem;
+        margin-bottom: 0.6rem;
+      }
+      .tab {
+        flex: none;
+        font: inherit;
+        font-weight: 700;
+        border: 2px solid var(--g7);
+        background: #fff;
+        color: var(--g8);
+        border-radius: 999px;
+        padding: 0.4rem 0.95rem;
+        cursor: pointer;
+        min-height: 40px;
+      }
+      .tab[aria-selected="true"] {
+        background: var(--g7);
+        color: #fff;
+      }
+      .row {
+        display: flex;
+        justify-content: space-between;
+        gap: 0.8rem;
+        flex-wrap: wrap;
+        align-items: flex-start;
+      }
+      .badge {
+        font-size: 0.76rem;
+        font-weight: 700;
+        border-radius: 999px;
+        padding: 0.1rem 0.6rem;
+        background: var(--g1);
+        color: var(--g8);
+      }
+      .badge.off {
+        background: #eee;
+        color: #555;
+      }
+      .acts {
+        display: flex;
+        gap: 0.4rem;
+        flex-wrap: wrap;
+        margin-top: 0.6rem;
+      }
+      .thumb {
+        width: 84px;
+        height: 84px;
+        object-fit: cover;
+        border-radius: 10px;
+        border: 1px solid var(--line);
+      }
+      .prev {
+        max-width: 240px;
+        max-height: 180px;
+        border-radius: 10px;
+        border: 1px solid var(--line);
+        margin: 0.3rem 0;
+      }
+      #sheet {
+        position: fixed;
+        inset: 0;
+        background: rgba(3, 25, 18, 0.75);
+        z-index: 100;
+        display: none;
+        overflow: auto;
+        padding: 1rem;
+      }
+      #sheet.open {
+        display: block;
+      }
+      .box {
+        background: #fff;
+        max-width: 680px;
+        margin: 0 auto;
+        border-radius: 16px;
+        padding: 1.2rem;
+        border-top: 5px solid var(--gold);
+      }
+      pre {
+        background: #0b2a20;
+        color: #e5f3ec;
+        padding: 1rem;
+        border-radius: 12px;
+        overflow: auto;
+        font-size: 0.8rem;
+        max-height: 340px;
+      }
+      details {
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        padding: 0.8rem 1rem;
+        margin: 1rem 0;
+      }
+      summary {
+        cursor: pointer;
+        font-weight: 700;
+        color: var(--g8);
+      }
+      #toast {
+        position: fixed;
+        left: 50%;
+        bottom: 24px;
+        transform: translateX(-50%);
+        background: var(--g9);
+        color: #fff;
+        border: 2px solid var(--gold);
+        padding: 0.6rem 1.1rem;
+        border-radius: 999px;
+        z-index: 300;
+        display: none;
+        max-width: 92vw;
+        text-align: center;
+        font-weight: 600;
+      }
+      .login {
+        max-width: 420px;
+        margin: 2rem auto;
+      }
+      [hidden] {
+        display: none !important;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <b>TRACDI MSA — Msimamizi</b>
+      <div class="r">
+        <a class="btn s" href="index.html" target="_blank" rel="noopener"
+          >Tazama Tovuti</a
+        ><button class="btn s" id="logout" type="button" hidden>Toka</button>
+      </div>
+    </header>
+
+    <div class="wrap">
+      <!-- Mipangilio haijawekwa -->
+      <div id="noConfig" hidden>
+        <div class="err">
+          Supabase haijawekwa. Fungua <code>admin.html</code>, weka
+          <code>url</code> na <code>anonKey</code> (publishable/anon key pekee,
+          kamwe usiweke service-role key) kwenye <code>CONFIG</code>. Tumia
+          thamani zilezile ulizoweka kwenye <code>index.html</code>.
+        </div>
+      </div>
+
+      <!-- Kuingia -->
+      <div id="loginView" class="login" hidden>
+        <div class="card">
+          <h2>Ingia kama Msimamizi</h2>
+          <form id="loginForm" novalidate>
+            <div class="field">
+              <label for="email">Barua pepe</label
+              ><input
+                id="email"
+                type="email"
+                autocomplete="username"
+                required
+              />
+            </div>
+            <div class="field">
+              <label for="pass">Nenosiri</label
+              ><input
+                id="pass"
+                type="password"
+                autocomplete="current-password"
+                required
+              />
+            </div>
+            <button class="btn p" id="loginBtn" type="submit">Ingia</button>
+            <div id="loginMsg" role="alert"></div>
+          </form>
+        </div>
+      </div>
+
+      <!-- Hakuna ruhusa -->
+      <div id="deniedView" hidden>
+        <div class="err">
+          Akaunti hii haina ruhusa ya msimamizi. Mmiliki lazima aiongeze kwenye
+          jedwali la <code>admins</code> (angalia maelekezo ya kuanzisha hapa
+          chini).
+        </div>
+      </div>
+
+      <!-- Dashibodi -->
+      <div id="dashView" hidden>
+        <div
+          class="tabs"
+          id="tabs"
+          role="tablist"
+          aria-label="Sehemu za maudhui"
+        ></div>
+        <div class="row" style="align-items: center; margin-bottom: 0.8rem">
+          <h2 id="colTitle" style="margin: 0"></h2>
+          <button class="btn g" id="addBtn" type="button">+ Ongeza</button>
+        </div>
+        <div class="field">
+          <label
+            class="sr"
+            for="filter"
+            style="position: absolute; left: -9999px"
+            >Chuja</label
+          ><input
+            id="filter"
+            type="search"
+            placeholder="Tafuta kwenye orodha…"
+          />
+        </div>
+        <div id="note"></div>
+        <div id="list" aria-live="polite"></div>
+      </div>
+
+      <!-- Maelekezo ya kuanzisha -->
+      <details id="setup">
+        <summary>Maelekezo ya kuanzisha Supabase (mara moja tu)</summary>
+        <ol>
+          <li>
+            Fungua Supabase → <strong>SQL Editor</strong>, bandika SQL ifuatayo
+            na ubonyeze Run. Inatengeneza majedwali, sera za RLS na hifadhi ya
+            picha (<code>media</code>).
+          </li>
+          <li>
+            Supabase → <strong>Authentication → Users → Add user</strong>: weka
+            barua pepe na nenosiri la msimamizi (washa “Auto confirm”).
+          </li>
+          <li>
+            Kisha endesha:
+            <code
+              >insert into public.admins (user_id) select id from auth.users
+              where email = 'BARUA@YAKO.COM';</code
+            >
+          </li>
+          <li>
+            Kwa usalama, zima usajili wa watu wapya: Authentication → Sign In /
+            Providers → Email → zima “Allow new users to sign up”.
+          </li>
+        </ol>
+        <button class="btn s" id="copySql" type="button">Nakili SQL</button>
+        <pre id="sqlText">
+-- ========== 1. WASIMAMIZI ==========
+create table if not exists public.admins (
+  user_id uuid primary key references auth.users(id) on delete cascade,
+  created_at timestamptz not null default now()
+);
+alter table public.admins enable row level security;
+
+create or replace function public.is_admin()
+returns boolean language sql stable security definer set search_path = public as $$
+  select exists (select 1 from public.admins where user_id = auth.uid());
+$$;
+revoke all on function public.is_admin() from public;
+grant execute on function public.is_admin() to authenticated;
+
+drop policy if exists "admin anajiona" on public.admins;
+create policy "admin anajiona" on public.admins for select to authenticated using (user_id = auth.uid());
+grant select on public.admins to authenticated;
+
+-- ========== 2. MAJEDWALI YA MAUDHUI ==========
+create table if not exists public.announcements (
+  id uuid primary key default gen_random_uuid(), created_at timestamptz not null default now(),
+  published boolean not null default true,
+  title text not null, category text not null default 'Jumla', post_date date not null default current_date,
+  description text not null, image_url text, link_url text, link_label text);
+
+create table if not exists public.events (
+  id uuid primary key default gen_random_uuid(), created_at timestamptz not null default now(),
+  published boolean not null default true,
+  title text not null, category text not null, event_date date not null, event_time time,
+  location text, description text, image_url text);
+
+create table if not exists public.gallery (
+  id uuid primary key default gen_random_uuid(), created_at timestamptz not null default now(),
+  published boolean not null default true,
+  image_url text not null, alt text not null, caption text, description text);
+
+create table if not exists public.quran (
+  id uuid primary key default gen_random_uuid(), created_at timestamptz not null default now(),
+  published boolean not null default true,
+  surah text not null, surah_number int not null, ayah text not null, arabic text not null, swahili text not null);
+
+create table if not exists public.hadith (
+  id uuid primary key default gen_random_uuid(), created_at timestamptz not null default now(),
+  published boolean not null default true,
+  topic text not null, arabic text, swahili text not null, source text not null, grade text);
+
+create table if not exists public.duas (
+  id uuid primary key default gen_random_uuid(), created_at timestamptz not null default now(),
+  published boolean not null default true,
+  category text not null, title text not null, arabic text not null, translit text, swahili text not null, source text);
+
+create table if not exists public.reminders (
+  id uuid primary key default gen_random_uuid(), created_at timestamptz not null default now(),
+  published boolean not null default true,
+  topic text not null, body text not null, ref text);
+
+create table if not exists public.qa (
+  id uuid primary key default gen_random_uuid(), created_at timestamptz not null default now(),
+  published boolean not null default true,
+  question text not null, answer text not null, reviewer text, source text);
+
+create table if not exists public.leadership (
+  id uuid primary key default gen_random_uuid(), created_at timestamptz not null default now(),
+  published boolean not null default true,
+  name text not null, role text not null, photo_url text, sort_order int not null default 100);
+
+create table if not exists public.calendar_dates (
+  id uuid primary key default gen_random_uuid(), created_at timestamptz not null default now(),
+  published boolean not null default true,
+  title text not null, event_date date not null, note text);
+
+-- ========== 3. RLS: umma husoma yaliyochapishwa tu; msimamizi anafanya yote ==========
+do $$
+declare t text;
+begin
+  foreach t in array array['announcements','events','gallery','quran','hadith','duas','reminders','qa','leadership','calendar_dates'] loop
+    execute format('alter table public.%I enable row level security', t);
+    execute format('drop policy if exists "umma anasoma yaliyochapishwa" on public.%I', t);
+    execute format('create policy "umma anasoma yaliyochapishwa" on public.%I for select to anon, authenticated using (published = true)', t);
+    execute format('drop policy if exists "msimamizi ana ruhusa kamili" on public.%I', t);
+    execute format('create policy "msimamizi ana ruhusa kamili" on public.%I for all to authenticated using (public.is_admin()) with check (public.is_admin())', t);
+    execute format('revoke all on public.%I from anon, authenticated', t);
+    execute format('grant select on public.%I to anon', t);
+    execute format('grant select, insert, update, delete on public.%I to authenticated', t);
+  end loop;
+end $$;
+
+-- ========== 4. UJUMBE WA WAGENI (submissions) ==========
+create table if not exists public.submissions (
+  id uuid primary key default gen_random_uuid(), created_at timestamptz not null default now(),
+  name text check (name is null or char_length(name) &lt;= 80),
+  topic text not null check (char_length(topic) between 1 and 60),
+  message text not null check (char_length(message) between 10 and 1000),
+  contact text check (contact is null or char_length(contact) &lt;= 120));
+alter table public.submissions add column if not exists handled boolean not null default false;
+alter table public.submissions enable row level security;
+grant insert on public.submissions to anon;
+grant select, update, delete on public.submissions to authenticated;
+
+drop policy if exists "umma anaweza kutuma tu" on public.submissions;
+create policy "umma anaweza kutuma tu" on public.submissions for insert to anon
+  with check (char_length(message) between 10 and 1000);
+drop policy if exists "msimamizi anasoma ujumbe" on public.submissions;
+create policy "msimamizi anasoma ujumbe" on public.submissions for select to authenticated using (public.is_admin());
+drop policy if exists "msimamizi anasasisha ujumbe" on public.submissions;
+create policy "msimamizi anasasisha ujumbe" on public.submissions for update to authenticated using (public.is_admin()) with check (public.is_admin());
+drop policy if exists "msimamizi anafuta ujumbe" on public.submissions;
+create policy "msimamizi anafuta ujumbe" on public.submissions for delete to authenticated using (public.is_admin());
+
+-- ========== 5. HIFADHI YA PICHA (bucket "media") ==========
+insert into storage.buckets (id, name, public, file_size_limit, allowed_mime_types)
+values ('media','media', true, 5242880, array['image/jpeg','image/png','image/webp','image/gif'])
+on conflict (id) do update set public = true, file_size_limit = 5242880,
+  allowed_mime_types = array['image/jpeg','image/png','image/webp','image/gif'];
+
+drop policy if exists "msimamizi anapakia picha" on storage.objects;
+create policy "msimamizi anapakia picha" on storage.objects for insert to authenticated
+  with check (bucket_id = 'media' and public.is_admin());
+drop policy if exists "msimamizi anasasisha picha" on storage.objects;
+create policy "msimamizi anasasisha picha" on storage.objects for update to authenticated
+  using (bucket_id = 'media' and public.is_admin()) with check (bucket_id = 'media' and public.is_admin());
+drop policy if exists "msimamizi anafuta picha" on storage.objects;
+create policy "msimamizi anafuta picha" on storage.objects for delete to authenticated
+  using (bucket_id = 'media' and public.is_admin());</pre
+        >
+      </details>
+    </div>
+
+    <div id="sheet" role="dialog" aria-modal="true" aria-label="Fomu">
+      <div class="box" id="box"></div>
+    </div>
+    <div id="toast" role="status" aria-live="polite"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+    <script>
+      "use strict";
+      /* ===== EDIT HERE: Supabase (thamani zilezile za index.html). Anon/publishable key pekee — kamwe service-role. ===== */
+      const CONFIG = { supabase: { url: "https://rpwgykkaojiqxrlgvdhd.supabase.co", anonKey: "sb_publishable_yE-LnK3_-vNp9LAJm9rG4g_8iQqPCNo" }, bucket: "media" };
+
+      const $ = (s, r = document) => r.querySelector(s);
+      const esc = (v) =>
+        String(v ?? "").replace(
+          /[&<>"']/g,
+          (c) =>
+            ({
+              "&": "&amp;",
+              "<": "&lt;",
+              ">": "&gt;",
+              '"': "&quot;",
+              "'": "&#39;",
+            })[c],
+        );
+      const today = () => new Date().toISOString().slice(0, 10);
+      let tt;
+      function toast(m) {
+        const t = $("#toast");
+        t.textContent = m;
+        t.style.display = "block";
+        clearTimeout(tt);
+        tt = setTimeout(() => (t.style.display = "none"), 2600);
+      }
+      function view(name) {
+        ["noConfig", "loginView", "deniedView", "dashView"].forEach(
+          (v) => ($("#" + v).hidden = v !== name),
+        );
+        $("#logout").hidden = !(name === "dashView" || name === "deniedView");
+      }
+
+      /* ===== MAUDHUI: kila sehemu inaelezea fomu yake — usibadilishe isipokuwa unaongeza sehemu mpya ===== */
+      const EV_CATS = [
+        "Darsa na mihadhara",
+        "Qur'an",
+        "Iftar na Ramadan",
+        "Huduma kwa jamii",
+        "Mikusanyiko ya wanafunzi",
+        "Warsha za elimu",
+      ];
+      const H_TOPICS = [
+        "Nia",
+        "Tabia njema",
+        "Elimu",
+        "Huruma",
+        "Umoja",
+        "Subira",
+        "Ibada",
+      ];
+      const D_CATS = [
+        "Asubuhi na jioni",
+        "Kuingia na kutoka",
+        "Elimu",
+        "Msamaha",
+        "Safari",
+        "Dua za jumla",
+      ];
+      const R_TOPICS = [
+        "Sala",
+        "Qur'an",
+        "Subira",
+        "Shukrani",
+        "Tabia njema",
+        "Kutafuta elimu",
+        "Udugu na kusaidiana",
+      ];
+      const VERIFY =
+        "Weka maandishi yaliyothibitishwa kutoka chanzo cha kuaminika pekee. Usibuni aya, Hadith au rejea.";
+      const COLS = {
+        announcements: {
+          label: "Matangazo",
+          title: (r) => r.title,
+          sub: (r) => `${r.category} • ${r.post_date}`,
+          order: ["created_at", false],
+          fields: [
+            { k: "title", l: "Kichwa", t: "text", req: 1, max: 150 },
+            {
+              k: "category",
+              l: "Aina",
+              t: "text",
+              req: 1,
+              def: "Jumla",
+              opts: ["Jumla", "Darsa", "Ibada", "Huduma kwa jamii", "Elimu"],
+              max: 40,
+            },
+            { k: "post_date", l: "Tarehe", t: "date", req: 1, def: "today" },
+            {
+              k: "description",
+              l: "Maelezo",
+              t: "textarea",
+              req: 1,
+              max: 3000,
+              rows: 6,
+            },
+            { k: "image_url", l: "Picha (hiari)", t: "image" },
+            {
+              k: "link_url",
+              l: "Kiungo cha maelezo (hiari, https://)",
+              t: "url",
+              max: 400,
+            },
+            {
+              k: "link_label",
+              l: "Jina la kiungo (hiari)",
+              t: "text",
+              max: 60,
+            },
+          ],
+        },
+        events: {
+          label: "Matukio",
+          title: (r) => r.title,
+          sub: (r) =>
+            `${r.category} • ${r.event_date}${r.event_time ? " " + String(r.event_time).slice(0, 5) : ""}`,
+          order: ["event_date", false],
+          fields: [
+            { k: "title", l: "Kichwa cha tukio", t: "text", req: 1, max: 150 },
+            {
+              k: "category",
+              l: "Aina",
+              t: "text",
+              req: 1,
+              opts: EV_CATS,
+              def: EV_CATS[0],
+              max: 40,
+            },
+            { k: "event_date", l: "Tarehe", t: "date", req: 1, def: "today" },
+            { k: "event_time", l: "Saa (hiari)", t: "time" },
+            { k: "location", l: "Mahali", t: "text", max: 150 },
+            {
+              k: "description",
+              l: "Maelezo",
+              t: "textarea",
+              max: 2000,
+              rows: 5,
+            },
+            { k: "image_url", l: "Picha (hiari)", t: "image" },
+          ],
+        },
+        gallery: {
+          label: "Picha",
+          title: (r) => r.caption || r.alt,
+          sub: (r) => r.alt,
+          thumb: (r) => r.image_url,
+          order: ["created_at", false],
+          fields: [
+            {
+              k: "image_url",
+              l: "Picha",
+              t: "image",
+              req: 1,
+              hint: "Tumia picha halisi za shughuli za TRACDI MSA pekee.",
+            },
+            {
+              k: "alt",
+              l: "Maelezo mafupi ya picha (kwa walemavu wa macho)",
+              t: "text",
+              req: 1,
+              max: 200,
+            },
+            { k: "caption", l: "Kichwa (hiari)", t: "text", max: 120 },
+            {
+              k: "description",
+              l: "Maelezo (hiari)",
+              t: "textarea",
+              max: 800,
+              rows: 3,
+            },
+          ],
+        },
+        quran: {
+          label: "Qur'an",
+          title: (r) => `Sura ${r.surah} (${r.surah_number}):${r.ayah}`,
+          sub: (r) => String(r.swahili).slice(0, 90),
+          order: ["created_at", false],
+          note:
+            VERIFY +
+            " Tafsiri ya Kiswahili ilinganishwe na tafsiri inayotambulika.",
+          fields: [
+            {
+              k: "surah",
+              l: "Jina la Sura (mf. Al-Baqarah)",
+              t: "text",
+              req: 1,
+              max: 60,
+            },
+            {
+              k: "surah_number",
+              l: "Namba ya Sura",
+              t: "number",
+              req: 1,
+              min: 1,
+              max: 114,
+            },
+            {
+              k: "ayah",
+              l: "Aya (mf. 153 au 5-6)",
+              t: "text",
+              req: 1,
+              max: 20,
+            },
+            {
+              k: "arabic",
+              l: "Maandishi ya Kiarabu",
+              t: "textarea",
+              ar: 1,
+              req: 1,
+              max: 2500,
+              rows: 4,
+            },
+            {
+              k: "swahili",
+              l: "Tafsiri ya Kiswahili",
+              t: "textarea",
+              req: 1,
+              max: 2500,
+              rows: 4,
+            },
+          ],
+        },
+        hadith: {
+          label: "Hadith",
+          title: (r) => r.topic,
+          sub: (r) => `${String(r.swahili).slice(0, 70)} — ${r.source}`,
+          order: ["created_at", false],
+          note: VERIFY + " Taja rejea kamili (kitabu na namba) na daraja.",
+          fields: [
+            {
+              k: "topic",
+              l: "Mada",
+              t: "text",
+              req: 1,
+              opts: H_TOPICS,
+              def: H_TOPICS[0],
+              max: 40,
+            },
+            {
+              k: "arabic",
+              l: "Maandishi ya Kiarabu (hiari)",
+              t: "textarea",
+              ar: 1,
+              max: 3000,
+              rows: 4,
+            },
+            {
+              k: "swahili",
+              l: "Tafsiri ya Kiswahili",
+              t: "textarea",
+              req: 1,
+              max: 3000,
+              rows: 4,
+            },
+            {
+              k: "source",
+              l: "Rejea (mf. Sahih al-Bukhari, Na. 1)",
+              t: "text",
+              req: 1,
+              max: 200,
+            },
+            { k: "grade", l: "Daraja (mf. Sahih)", t: "text", max: 200 },
+          ],
+        },
+        duas: {
+          label: "Dua",
+          title: (r) => r.title,
+          sub: (r) => r.category,
+          order: ["created_at", false],
+          note: VERIFY,
+          fields: [
+            {
+              k: "category",
+              l: "Aina",
+              t: "text",
+              req: 1,
+              opts: D_CATS,
+              def: D_CATS[0],
+              max: 40,
+            },
+            { k: "title", l: "Kichwa cha Dua", t: "text", req: 1, max: 120 },
+            {
+              k: "arabic",
+              l: "Maandishi ya Kiarabu",
+              t: "textarea",
+              ar: 1,
+              req: 1,
+              max: 2500,
+              rows: 3,
+            },
+            {
+              k: "translit",
+              l: "Matamshi kwa herufi za Kilatini",
+              t: "textarea",
+              max: 2500,
+              rows: 3,
+            },
+            {
+              k: "swahili",
+              l: "Tafsiri ya Kiswahili",
+              t: "textarea",
+              req: 1,
+              max: 2500,
+              rows: 3,
+            },
+            {
+              k: "source",
+              l: "Rejea ya chanzo (acha wazi kama haijulikani kwa uhakika)",
+              t: "text",
+              max: 200,
+            },
+          ],
+        },
+        reminders: {
+          label: "Vikumbusho",
+          title: (r) => r.topic,
+          sub: (r) => String(r.body).slice(0, 90),
+          order: ["created_at", false],
+          fields: [
+            {
+              k: "topic",
+              l: "Mada",
+              t: "text",
+              req: 1,
+              opts: R_TOPICS,
+              def: R_TOPICS[0],
+              max: 40,
+            },
+            {
+              k: "body",
+              l: "Kikumbusho",
+              t: "textarea",
+              req: 1,
+              max: 800,
+              rows: 4,
+            },
+            {
+              k: "ref",
+              l: "Rejea (hiari, mf. Qur'an 94:5-6)",
+              t: "text",
+              max: 200,
+            },
+          ],
+        },
+        qa: {
+          label: "Maswali na Majibu",
+          title: (r) => r.question,
+          sub: (r) => String(r.answer).slice(0, 90),
+          order: ["created_at", false],
+          note: "Weka majibu yaliyopitiwa na mtu mwenye sifa pekee, na taja aliyepitia.",
+          fields: [
+            {
+              k: "question",
+              l: "Swali",
+              t: "textarea",
+              req: 1,
+              max: 1000,
+              rows: 3,
+            },
+            {
+              k: "answer",
+              l: "Jibu lililopitiwa",
+              t: "textarea",
+              req: 1,
+              max: 4000,
+              rows: 6,
+            },
+            { k: "reviewer", l: "Aliyepitia (jina/cheo)", t: "text", max: 120 },
+            { k: "source", l: "Rejea (hiari)", t: "text", max: 300 },
+          ],
+        },
+        leadership: {
+          label: "Uongozi",
+          title: (r) => r.name,
+          sub: (r) => r.role,
+          thumb: (r) => r.photo_url,
+          order: ["sort_order", true],
+          fields: [
+            { k: "name", l: "Jina kamili", t: "text", req: 1, max: 100 },
+            { k: "role", l: "Cheo", t: "text", req: 1, max: 100 },
+            { k: "photo_url", l: "Picha (hiari)", t: "image" },
+            {
+              k: "sort_order",
+              l: "Mpangilio (namba ndogo hutangulia)",
+              t: "number",
+              def: 100,
+              min: 0,
+              max: 9999,
+            },
+          ],
+        },
+        calendar_dates: {
+          label: "Kalenda",
+          title: (r) => r.title,
+          sub: (r) => r.event_date,
+          order: ["event_date", false],
+          note: "Weka tarehe zilizothibitishwa na viongozi wa dini wa eneo pekee.",
+          fields: [
+            {
+              k: "title",
+              l: "Tukio (mf. Eid al-Fitr)",
+              t: "text",
+              req: 1,
+              max: 120,
+            },
+            { k: "event_date", l: "Tarehe", t: "date", req: 1 },
+            { k: "note", l: "Maelezo / aliyetangaza", t: "text", max: 300 },
+          ],
+        },
+        submissions: { label: "Ujumbe wa Wageni", special: true },
+      };
+      const KEYS = Object.keys(COLS);
+      let sb = null,
+        cur = "announcements",
+        rows = [];
+
+      /* ===== AUTH ===== */
+      async function boot() {
+        const S = CONFIG.supabase;
+        if (!S.url || !S.anonKey || !window.supabase) {
+          view("noConfig");
+          if (S.url && S.anonKey)
+            $("#noConfig").innerHTML =
+              '<div class="err">Maktaba ya Supabase haikupakiwa. Angalia mtandao kisha onyesha upya ukurasa.</div>';
+          return;
+        }
+        sb = window.supabase.createClient(S.url, S.anonKey);
+        sb.auth.onAuthStateChange((ev) => {
+          if (ev === "SIGNED_OUT") view("loginView");
+        });
+        const { data } = await sb.auth.getSession();
+        data.session ? enter(data.session.user) : view("loginView");
+      }
+      async function enter(user) {
+        const { data, error } = await sb
+          .from("admins")
+          .select("user_id")
+          .eq("user_id", user.id)
+          .maybeSingle();
+        if (error || !data) {
+          view("deniedView");
+          return;
+        }
+        view("dashView");
+        buildTabs();
+        openCol(cur);
+      }
+      $("#loginForm").addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const m = $("#loginMsg");
+        m.innerHTML = "";
+        if (!sb) return;
+        const b = $("#loginBtn");
+        b.disabled = true;
+        b.textContent = "Inaingia…";
+        const { data, error } = await sb.auth.signInWithPassword({
+          email: $("#email").value.trim(),
+          password: $("#pass").value,
+        });
+        b.disabled = false;
+        b.textContent = "Ingia";
+        if (error) {
+          m.innerHTML =
+            '<div class="err">Imeshindwa kuingia. Hakikisha barua pepe na nenosiri ni sahihi.</div>';
+          return;
+        }
+        $("#pass").value = "";
+        enter(data.user);
+      });
+      $("#logout").addEventListener("click", async () => {
+        await sb.auth.signOut();
+        view("loginView");
+      });
+
+      /* ===== TABS / ORODHA ===== */
+      function buildTabs() {
+        $("#tabs").innerHTML = KEYS.map(
+          (k) =>
+            `<button class="tab" role="tab" data-k="${k}" aria-selected="${k === cur}">${esc(COLS[k].label)}</button>`,
+        ).join("");
+      }
+      $("#tabs").addEventListener("click", (e) => {
+        const b = e.target.closest("[data-k]");
+        if (b) {
+          openCol(b.dataset.k);
+        }
+      });
+      $("#filter").addEventListener("input", drawList);
+      $("#addBtn").addEventListener("click", () => openForm(cur, null));
+      async function openCol(k) {
+        cur = k;
+        const C = COLS[k];
+        document
+          .querySelectorAll(".tab")
+          .forEach((t) => t.setAttribute("aria-selected", t.dataset.k === k));
+        $("#colTitle").textContent = C.label;
+        $("#addBtn").hidden = !!C.special;
+        $("#filter").value = "";
+        $("#note").innerHTML = C.note
+          ? `<div class="warn">${esc(C.note)}</div>`
+          : "";
+        $("#list").innerHTML = '<div class="hint">Inapakia…</div>';
+        let q = sb.from(k).select("*");
+        q = C.special
+          ? q.order("created_at", { ascending: false })
+          : q.order(C.order[0], { ascending: C.order[1] });
+        const { data, error } = await q.limit(500);
+        if (k !== cur) return;
+        if (error) {
+          $("#list").innerHTML =
+            `<div class="err">Imeshindwa kupakia: ${esc(error.message)}. Hakikisha umeendesha SQL ya kuanzisha.</div>`;
+          return;
+        }
+        rows = data || [];
+        drawList();
+      }
+      function drawList() {
+        const C = COLS[cur],
+          f = $("#filter").value.trim().toLowerCase();
+        const list = rows.filter(
+          (r) => !f || JSON.stringify(r).toLowerCase().includes(f),
+        );
+        if (!rows.length) {
+          $("#list").innerHTML =
+            `<div class="card">Hakuna kitu bado. ${C.special ? "Ujumbe wa wageni utaonekana hapa." : "Bonyeza “+ Ongeza”."}</div>`;
+          return;
+        }
+        if (!list.length) {
+          $("#list").innerHTML =
+            '<div class="card">Hakuna kinacholingana na utafutaji.</div>';
+          return;
+        }
+        $("#list").innerHTML = C.special
+          ? list.map(subCard).join("")
+          : list
+              .map(
+                (
+                  r,
+                ) => `<article class="card"><div class="row"><div style="flex:1;min-width:200px"><span class="badge ${r.published ? "" : "off"}">${r.published ? "Imechapishwa" : "Rasimu (fichwa)"}</span>
+    <h3 style="margin-top:.4rem">${esc(C.title(r))}</h3><div class="hint">${esc(C.sub(r))}</div></div>${C.thumb && C.thumb(r) ? `<img class="thumb" src="${esc(C.thumb(r))}" alt="">` : ""}</div>
+    <div class="acts"><button class="btn s" data-a="edit" data-id="${r.id}">Hariri</button><button class="btn s" data-a="pub" data-id="${r.id}">${r.published ? "Ficha" : "Chapisha"}</button><button class="btn s d" data-a="del" data-id="${r.id}">Futa</button></div></article>`,
+              )
+              .join("");
+      }
+      function subCard(r) {
+        const c = r.contact || "",
+          mail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(c),
+          tel = /^\+?[\d\s-]{9,15}$/.test(c);
+        return `<article class="card"><div class="row"><div><span class="badge ${r.handled ? "" : "off"}">${r.handled ? "Imeshughulikiwa" : "Mpya"}</span> <span class="hint">${esc(new Date(r.created_at).toLocaleString("sw-TZ"))}</span>
+  <h3 style="margin-top:.4rem">${esc(r.topic)}</h3></div></div><p style="white-space:pre-wrap">${esc(r.message)}</p>
+  <div class="hint">Jina: ${esc(r.name || "Hakutajwa")} • Mawasiliano: ${c ? (mail ? `<a href="mailto:${esc(c)}">${esc(c)}</a>` : tel ? `<a href="tel:${esc(c.replace(/\s/g, ""))}">${esc(c)}</a>` : esc(c)) : "Hakuna"}</div>
+  <div class="acts"><button class="btn s" data-a="handled" data-id="${r.id}">${r.handled ? "Rudisha kuwa mpya" : "Weka imeshughulikiwa"}</button><button class="btn s" data-a="toqa" data-id="${r.id}">Andaa jibu (Q&amp;A)</button><button class="btn s d" data-a="del" data-id="${r.id}">Futa</button></div></article>`;
+      }
+      $("#list").addEventListener("click", async (e) => {
+        const b = e.target.closest("[data-a]");
+        if (!b) return;
+        const r = rows.find((x) => x.id === b.dataset.id);
+        if (!r) return;
+        const a = b.dataset.a;
+        if (a === "edit") return openForm(cur, r);
+        if (a === "toqa") {
+          cur = "qa";
+          buildTabs();
+          await openCol("qa");
+          return openForm("qa", null, { question: r.message });
+        }
+        if (a === "pub" || a === "handled") {
+          const patch =
+            a === "pub" ? { published: !r.published } : { handled: !r.handled };
+          const { error } = await sb.from(cur).update(patch).eq("id", r.id);
+          if (error) return toast("Imeshindwa: " + error.message);
+          Object.assign(r, patch);
+          drawList();
+          toast("Imesasishwa");
+          return;
+        }
+        if (a === "del") {
+          if (
+            !confirm(
+              "Una uhakika unataka kufuta? Hatua hii haiwezi kutenduliwa.",
+            )
+          )
+            return;
+          const { error } = await sb.from(cur).delete().eq("id", r.id);
+          if (error) return toast("Imeshindwa kufuta: " + error.message);
+          for (const f of (COLS[cur].fields || []).filter(
+            (f) => f.t === "image",
+          ))
+            removeImage(r[f.k]);
+          rows = rows.filter((x) => x.id !== r.id);
+          drawList();
+          toast("Imefutwa");
+        }
+      });
+
+      /* ===== FOMU ===== */
+      function fieldHtml(f, v) {
+        const id = "f_" + f.k,
+          val = v ?? (f.def === "today" ? today() : f.def) ?? "";
+        const lab = `<label for="${id}">${esc(f.l)}${f.req ? " *" : ""}</label>`,
+          hint = f.hint ? `<div class="hint">${esc(f.hint)}</div>` : "";
+        const ar = f.ar ? ' dir="rtl" lang="ar" class="ar"' : "";
+        if (f.t === "textarea")
+          return `<div class="field">${lab}<textarea id="${id}"${ar} maxlength="${f.max || 4000}" rows="${f.rows || 4}">${esc(val)}</textarea>${hint}</div>`;
+        if (f.t === "image")
+          return `<div class="field">${lab}<img class="prev" id="prev_${f.k}" alt="Hakikisho la picha" ${val ? `src="${esc(val)}"` : "hidden"}><input type="hidden" id="${id}" value="${esc(val)}"><input type="file" id="file_${f.k}" accept="image/*"><div class="acts" style="margin:0"><button type="button" class="btn s d" id="rm_${f.k}" ${val ? "" : "hidden"}>Ondoa picha</button></div><div class="hint" id="st_${f.k}"></div>${hint}</div>`;
+        const dl = f.opts ? ` list="dl_${f.k}"` : "",
+          t = f.t === "url" ? "url" : f.t;
+        const mm =
+          f.t === "number"
+            ? ` min="${f.min ?? ""}" max="${f.max ?? ""}"`
+            : ` maxlength="${f.max || 300}"`;
+        return `<div class="field">${lab}<input id="${id}" type="${t}"${dl}${mm} value="${esc(val)}">${f.opts ? `<datalist id="dl_${f.k}">${f.opts.map((o) => `<option value="${esc(o)}">`).join("")}</datalist>` : ""}${hint}</div>`;
+      }
+      function openForm(k, row, prefill) {
+        const C = COLS[k],
+          P = prefill || {};
+        const box = $("#box");
+        box.innerHTML = `<h2>${row ? "Hariri" : "Ongeza"}: ${esc(C.label)}</h2>${C.note ? `<div class="warn">${esc(C.note)}</div>` : ""}<form id="theForm" novalidate>${C.fields.map((f) => fieldHtml(f, row ? row[f.k] : P[f.k])).join("")}
+  <div class="field"><label style="display:flex;gap:.6rem;align-items:center;font-weight:600"><input type="checkbox" id="f_published" ${(row ? row.published : true) ? "checked" : ""}> Chapisha kwenye tovuti (ondoa tiki ili kuhifadhi kama rasimu)</label></div>
+  <div id="formErr" role="alert"></div><div class="acts"><button class="btn p" type="submit" id="saveBtn">Hifadhi</button><button class="btn" type="button" id="cancelBtn">Ghairi</button></div></form>`;
+        $("#sheet").classList.add("open");
+        document.body.style.overflow = "hidden";
+        C.fields.filter((f) => f.t === "image").forEach((f) => wireImage(f.k));
+        $("#cancelBtn").onclick = closeForm;
+        $("#theForm").addEventListener("submit", (ev) => {
+          ev.preventDefault();
+          save(k, row);
+        });
+        const first = box.querySelector(
+          "input:not([type=hidden]):not([type=file]),textarea",
+        );
+        if (first) first.focus();
+      }
+      function closeForm() {
+        $("#sheet").classList.remove("open");
+        document.body.style.overflow = "";
+      }
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && $("#sheet").classList.contains("open"))
+          closeForm();
+      });
+      async function save(k, row) {
+        const C = COLS[k],
+          err = $("#formErr"),
+          payload = {};
+        err.innerHTML = "";
+        for (const f of C.fields) {
+          const el = $("#f_" + f.k);
+          let v = el.value.trim();
+          if (f.req && !v) {
+            err.innerHTML = `<div class="err">Jaza: ${esc(f.l)}</div>`;
+            el.focus && el.type !== "hidden" && el.focus();
+            return;
+          }
+          if (f.t === "url" && v && !/^https:\/\//i.test(v)) {
+            err.innerHTML = `<div class="err">${esc(f.l)} lazima kianze na https://</div>`;
+            return;
+          }
+          if (f.t === "number") {
+            if (v === "") {
+              v = null;
+            } else {
+              v = Number(v);
+              if (
+                !Number.isFinite(v) ||
+                (f.min != null && v < f.min) ||
+                (f.max != null && v > f.max)
+              ) {
+                err.innerHTML = `<div class="err">${esc(f.l)}: namba si sahihi.</div>`;
+                return;
+              }
+            }
+          }
+          payload[f.k] = v === "" || v === undefined ? null : v;
+        }
+        payload.published = $("#f_published").checked;
+        const b = $("#saveBtn");
+        b.disabled = true;
+        b.textContent = "Inahifadhi…";
+        const q = row
+          ? sb.from(k).update(payload).eq("id", row.id)
+          : sb.from(k).insert(payload);
+        const { error } = await q;
+        b.disabled = false;
+        b.textContent = "Hifadhi";
+        if (error) {
+          err.innerHTML = `<div class="err">Imeshindwa kuhifadhi: ${esc(error.message)}</div>`;
+          return;
+        }
+        if (row)
+          for (const f of C.fields.filter((f) => f.t === "image"))
+            if (row[f.k] && row[f.k] !== payload[f.k]) removeImage(row[f.k]);
+        closeForm();
+        toast(row ? "Imesasishwa" : "Imehifadhiwa");
+        openCol(k);
+      }
+
+      /* ===== PICHA ===== */
+      function wireImage(k) {
+        const file = $("#file_" + k),
+          hid = $("#f_" + k),
+          prev = $("#prev_" + k),
+          st = $("#st_" + k),
+          rm = $("#rm_" + k);
+        file.addEventListener("change", async () => {
+          const f = file.files[0];
+          if (!f) return;
+          if (!/^image\//.test(f.type)) {
+            st.textContent = "Chagua faili la picha.";
+            return;
+          }
+          st.textContent = "Inapakia picha…";
+          $("#saveBtn").disabled = true;
+          try {
+            const url = await uploadImage(f);
+            hid.value = url;
+            prev.src = url;
+            prev.hidden = false;
+            rm.hidden = false;
+            st.textContent = "Picha imepakiwa.";
+          } catch (e) {
+            st.innerHTML = `<span style="color:var(--red)">Imeshindwa kupakia: ${esc(e.message || e)}</span>`;
+          }
+          $("#saveBtn").disabled = false;
+          file.value = "";
+        });
+        rm.addEventListener("click", () => {
+          hid.value = "";
+          prev.hidden = true;
+          prev.removeAttribute("src");
+          rm.hidden = true;
+          st.textContent = "Picha itaondolewa ukihifadhi.";
+        });
+      }
+      function resizeImage(file, max = 1600) {
+        return new Promise((res, rej) => {
+          const url = URL.createObjectURL(file),
+            img = new Image();
+          img.onload = () => {
+            URL.revokeObjectURL(url);
+            const s = Math.min(1, max / Math.max(img.width, img.height));
+            const c = document.createElement("canvas");
+            c.width = Math.round(img.width * s);
+            c.height = Math.round(img.height * s);
+            const x = c.getContext("2d");
+            x.fillStyle = "#fff";
+            x.fillRect(0, 0, c.width, c.height);
+            x.drawImage(img, 0, 0, c.width, c.height);
+            c.toBlob(
+              (b) =>
+                b ? res(b) : rej(new Error("Imeshindwa kuchakata picha")),
+              "image/jpeg",
+              0.85,
+            );
+          };
+          img.onerror = () => {
+            URL.revokeObjectURL(url);
+            rej(new Error("Picha haisomeki"));
+          };
+          img.src = url;
+        });
+      }
+      async function uploadImage(file) {
+        const blob = await resizeImage(file),
+          path = `${cur}/${Date.now()}-${Math.random().toString(36).slice(2, 8)}.jpg`;
+        const { error } = await sb.storage
+          .from(CONFIG.bucket)
+          .upload(path, blob, {
+            contentType: "image/jpeg",
+            cacheControl: "31536000",
+          });
+        if (error) throw error;
+        return sb.storage.from(CONFIG.bucket).getPublicUrl(path).data.publicUrl;
+      }
+      function removeImage(url) {
+        if (!url) return;
+        const m = String(url).match(
+          /\/storage\/v1\/object\/public\/([^/]+)\/(.+)$/,
+        );
+        if (m && m[1] === CONFIG.bucket)
+          sb.storage
+            .from(CONFIG.bucket)
+            .remove([decodeURIComponent(m[2])])
+            .catch(() => {});
+      }
+
+      $("#copySql").addEventListener("click", async () => {
+        try {
+          await navigator.clipboard.writeText($("#sqlText").textContent);
+          toast("SQL imenakiliwa");
+        } catch (e) {
+          toast("Imeshindwa kunakili. Chagua maandishi kwa mkono.");
+        }
+      });
+      boot();
+    </script>
+  </body>
+</html>
